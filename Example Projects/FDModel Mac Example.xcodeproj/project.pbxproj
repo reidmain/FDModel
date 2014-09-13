@@ -1,0 +1,460 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		279523F519C6A51A00E64078 /* FDGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 279523F419C6A51A00E64078 /* FDGame.m */; };
+		27A24B9B19C3C4AE00BA5D33 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A24B9A19C3C4AE00BA5D33 /* main.m */; };
+		27A24BA019C3C4AE00BA5D33 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27A24B9F19C3C4AE00BA5D33 /* Images.xcassets */; };
+		27A24BA219C3C4AE00BA5D33 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 27A24BA119C3C4AE00BA5D33 /* InfoPlist.strings */; };
+		27A24BA419C3C4AE00BA5D33 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 27A24BA319C3C4AE00BA5D33 /* Credits.rtf */; };
+		27A24BA719C3C4AE00BA5D33 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27A24BA619C3C4AE00BA5D33 /* MainMenu.xib */; };
+		27A24BB519C3C4AE00BA5D33 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A24BB419C3C4AE00BA5D33 /* AppDelegate.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		279523ED19C6A4B300E64078 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 279523E619C6A4B300E64078 /* FDModel.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 27759C6A19C69E98008D9F3E;
+			remoteInfo = "FDModel iOS";
+		};
+		279523EF19C6A4B300E64078 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 279523E619C6A4B300E64078 /* FDModel.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 27759C8919C69ECC008D9F3E;
+			remoteInfo = "FDModel OS X";
+		};
+		279523F119C6A4B300E64078 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 279523E619C6A4B300E64078 /* FDModel.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 27A24B3F19C3C47C00BA5D33;
+			remoteInfo = "FDModel iOS (Static)";
+		};
+		279523F619C6A53E00E64078 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 279523E619C6A4B300E64078 /* FDModel.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 27759C8819C69ECC008D9F3E;
+			remoteInfo = "FDModel OS X";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		279523E619C6A4B300E64078 /* FDModel.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FDModel.xcodeproj; path = "../../Framework Project/FDModel.xcodeproj"; sourceTree = "<group>"; };
+		279523F319C6A51A00E64078 /* FDGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDGame.h; sourceTree = "<group>"; };
+		279523F419C6A51A00E64078 /* FDGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDGame.m; sourceTree = "<group>"; };
+		27A24B9419C3C4AE00BA5D33 /* FDModel Mac Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FDModel Mac Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		27A24B9819C3C4AE00BA5D33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27A24B9919C3C4AE00BA5D33 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
+		27A24B9A19C3C4AE00BA5D33 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		27A24B9C19C3C4AE00BA5D33 /* Entitlements.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Entitlements.entitlements; sourceTree = "<group>"; };
+		27A24B9F19C3C4AE00BA5D33 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		27A24BA119C3C4AE00BA5D33 /* InfoPlist.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
+		27A24BA319C3C4AE00BA5D33 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
+		27A24BA619C3C4AE00BA5D33 /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		27A24BB319C3C4AE00BA5D33 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		27A24BB419C3C4AE00BA5D33 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		27A24B9119C3C4AE00BA5D33 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		279523E719C6A4B300E64078 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				279523EE19C6A4B300E64078 /* FDModel.framework */,
+				279523F019C6A4B300E64078 /* FDModel.framework */,
+				279523F219C6A4B300E64078 /* libFDModel.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		27A24B8B19C3C4AE00BA5D33 = {
+			isa = PBXGroup;
+			children = (
+				27A24B9619C3C4AE00BA5D33 /* FDModel Mac Example */,
+				27A24B9D19C3C4AE00BA5D33 /* Vendors */,
+				27A24B9519C3C4AE00BA5D33 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		27A24B9519C3C4AE00BA5D33 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				27A24B9419C3C4AE00BA5D33 /* FDModel Mac Example.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		27A24B9619C3C4AE00BA5D33 /* FDModel Mac Example */ = {
+			isa = PBXGroup;
+			children = (
+				27A24BAA19C3C4AE00BA5D33 /* Classes */,
+				27A24BA519C3C4AE00BA5D33 /* Views */,
+				27A24B9E19C3C4AE00BA5D33 /* Resources */,
+				27A24B9719C3C4AE00BA5D33 /* Supporting Files */,
+			);
+			path = "FDModel Mac Example";
+			sourceTree = "<group>";
+		};
+		27A24B9719C3C4AE00BA5D33 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				27A24B9819C3C4AE00BA5D33 /* Info.plist */,
+				27A24B9919C3C4AE00BA5D33 /* Prefix.pch */,
+				27A24B9A19C3C4AE00BA5D33 /* main.m */,
+				27A24B9C19C3C4AE00BA5D33 /* Entitlements.entitlements */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		27A24B9D19C3C4AE00BA5D33 /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+				279523E619C6A4B300E64078 /* FDModel.xcodeproj */,
+			);
+			name = Vendors;
+			path = "FDModel Mac Example";
+			sourceTree = "<group>";
+		};
+		27A24B9E19C3C4AE00BA5D33 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				27A24B9F19C3C4AE00BA5D33 /* Images.xcassets */,
+				27A24BA119C3C4AE00BA5D33 /* InfoPlist.strings */,
+				27A24BA319C3C4AE00BA5D33 /* Credits.rtf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		27A24BA519C3C4AE00BA5D33 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				27A24BA619C3C4AE00BA5D33 /* MainMenu.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		27A24BAA19C3C4AE00BA5D33 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				27A24BB319C3C4AE00BA5D33 /* AppDelegate.h */,
+				27A24BB419C3C4AE00BA5D33 /* AppDelegate.m */,
+				279523F319C6A51A00E64078 /* FDGame.h */,
+				279523F419C6A51A00E64078 /* FDGame.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		27A24B9319C3C4AE00BA5D33 /* FDModel Mac Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27A24BB919C3C4AE00BA5D33 /* Build configuration list for PBXNativeTarget "FDModel Mac Example" */;
+			buildPhases = (
+				27A24B9019C3C4AE00BA5D33 /* Sources */,
+				27A24B9119C3C4AE00BA5D33 /* Frameworks */,
+				27A24B9219C3C4AE00BA5D33 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				279523F719C6A53E00E64078 /* PBXTargetDependency */,
+			);
+			name = "FDModel Mac Example";
+			productName = "FDModel Mac Example";
+			productReference = 27A24B9419C3C4AE00BA5D33 /* FDModel Mac Example.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		27A24B8C19C3C4AE00BA5D33 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = FD;
+				LastUpgradeCheck = 0600;
+				TargetAttributes = {
+					27A24B9319C3C4AE00BA5D33 = {
+						CreatedOnToolsVersion = 6.0;
+					};
+				};
+			};
+			buildConfigurationList = 27A24B8F19C3C4AE00BA5D33 /* Build configuration list for PBXProject "FDModel Mac Example" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 27A24B8B19C3C4AE00BA5D33;
+			productRefGroup = 27A24B9519C3C4AE00BA5D33 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 279523E719C6A4B300E64078 /* Products */;
+					ProjectRef = 279523E619C6A4B300E64078 /* FDModel.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				27A24B9319C3C4AE00BA5D33 /* FDModel Mac Example */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		279523EE19C6A4B300E64078 /* FDModel.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FDModel.framework;
+			remoteRef = 279523ED19C6A4B300E64078 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		279523F019C6A4B300E64078 /* FDModel.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FDModel.framework;
+			remoteRef = 279523EF19C6A4B300E64078 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		279523F219C6A4B300E64078 /* libFDModel.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libFDModel.a;
+			remoteRef = 279523F119C6A4B300E64078 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		27A24B9219C3C4AE00BA5D33 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27A24BA019C3C4AE00BA5D33 /* Images.xcassets in Resources */,
+				27A24BA419C3C4AE00BA5D33 /* Credits.rtf in Resources */,
+				27A24BA219C3C4AE00BA5D33 /* InfoPlist.strings in Resources */,
+				27A24BA719C3C4AE00BA5D33 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		27A24B9019C3C4AE00BA5D33 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27A24BB519C3C4AE00BA5D33 /* AppDelegate.m in Sources */,
+				279523F519C6A51A00E64078 /* FDGame.m in Sources */,
+				27A24B9B19C3C4AE00BA5D33 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		279523F719C6A53E00E64078 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "FDModel OS X";
+			targetProxy = 279523F619C6A53E00E64078 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		27A24BB619C3C4AE00BA5D33 /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = "FDModel Mac Example/Supporting Files/Entitlements.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Distribution";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(BUILD_DIR)/Release$(EFFECTIVE_PLATFORM_NAME)\"/**";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = AD_HOC;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"$(BUILD_DIR)/Release$(EFFECTIVE_PLATFORM_NAME)\"/**";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "\"$(BUILD_DIR)/Release$(EFFECTIVE_PLATFORM_NAME)\"/**";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "Ad Hoc";
+		};
+		27A24BB719C3C4AE00BA5D33 /* App Store */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = "FDModel Mac Example/Supporting Files/Entitlements.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Distribution";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(BUILD_DIR)/Release$(EFFECTIVE_PLATFORM_NAME)\"/**";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = APP_STORE;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"$(BUILD_DIR)/Release$(EFFECTIVE_PLATFORM_NAME)\"/**";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "\"$(BUILD_DIR)/Release$(EFFECTIVE_PLATFORM_NAME)\"/**";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "App Store";
+		};
+		27A24BB819C3C4AE00BA5D33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = "FDModel Mac Example/Supporting Files/Entitlements.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		27A24BBA19C3C4AE00BA5D33 /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FDModel Mac Example/Supporting Files/Prefix.pch";
+				INFOPLIST_FILE = "FDModel Mac Example/Supporting Files/Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = "Ad Hoc";
+		};
+		27A24BBB19C3C4AE00BA5D33 /* App Store */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FDModel Mac Example/Supporting Files/Prefix.pch";
+				INFOPLIST_FILE = "FDModel Mac Example/Supporting Files/Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = "App Store";
+		};
+		27A24BBC19C3C4AE00BA5D33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FDModel Mac Example/Supporting Files/Prefix.pch";
+				INFOPLIST_FILE = "FDModel Mac Example/Supporting Files/Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		27A24B8F19C3C4AE00BA5D33 /* Build configuration list for PBXProject "FDModel Mac Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27A24BB619C3C4AE00BA5D33 /* Ad Hoc */,
+				27A24BB719C3C4AE00BA5D33 /* App Store */,
+				27A24BB819C3C4AE00BA5D33 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Ad Hoc";
+		};
+		27A24BB919C3C4AE00BA5D33 /* Build configuration list for PBXNativeTarget "FDModel Mac Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27A24BBA19C3C4AE00BA5D33 /* Ad Hoc */,
+				27A24BBB19C3C4AE00BA5D33 /* App Store */,
+				27A24BBC19C3C4AE00BA5D33 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Ad Hoc";
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 27A24B8C19C3C4AE00BA5D33 /* Project object */;
+}

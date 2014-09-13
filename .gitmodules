@@ -1,0 +1,3 @@
+[submodule "Vendors/FDFoundationKit"]
+	path = Vendors/FDFoundationKit
+	url = git@github.com:reidmain/FDFoundationKit.git
