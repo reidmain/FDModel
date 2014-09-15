@@ -17,3 +17,73 @@ There are two supported methods for FDModel. Both methods assume your Xcode proj
 
 ### 2. CocoaPods
 Simply add `pod "FDModel", "~> 1.0.0"` to your Podfile.
+
+# Example
+Here is a simple example of the implementation details of a "game" model object. This project includes both iOS and Mac example projects which show how to actually create an instance of this game object from a NSDictionary.
+
+FDGame.h
+
+	@interface FDGame : FDModel
+
+
+	@property (nonatomic, copy) NSString *name;
+	@property (nonatomic, copy) NSString *genre;
+	@property (nonatomic, copy) NSDate *releaseDate;
+
+
+	@end
+
+FDGame.m
+
+	@implementation FDGame
+
+
+	+ (NSString *)remoteKeyPathForUniqueIdentifier
+	{
+		return @"game_id";
+	}
+
+	+ (NSDictionary *)remoteKeyPathsToLocalKeyPaths
+	{
+		FDGame *game = nil;
+		
+		NSDictionary *remoteKeyPathsToLocalKeyPaths = @{
+			@"name" : @keypath(game.name), 
+			@"genre" : @keypath(game.genre), 
+			@"release_date" : @keypath(game.releaseDate)
+			};
+		
+		return remoteKeyPathsToLocalKeyPaths;
+	}
+
+	+ (NSValueTransformer *)releaseDateTransformer
+	{
+		FDValueTransformer *releaseDateTransformer = [FDValueTransformer registerTransformerWithName: @"ReleaseDateTransformer" 
+			block: ^id(id value)
+			{
+				NSDateFormatter *dateFormatter = [NSDateFormatter new];
+				dateFormatter.dateFormat = @"MM-dd-yyyy";
+				
+				NSDate *releaseDate = [dateFormatter dateFromString: value];
+				
+				return releaseDate;
+			}];
+		
+		return releaseDateTransformer;
+	}
+
+	- (NSString *)description
+	{
+		NSString *description = [NSString stringWithFormat: @"<%@: %p; id = %@; name = %@; genre = %@; release date = %@>", 
+			[self class], 
+			self, 
+			self.identifier, 
+			_name, 
+			_genre, 
+			_releaseDate];
+		
+		return description;
+	}
+
+
+@end
