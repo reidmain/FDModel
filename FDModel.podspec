@@ -15,4 +15,5 @@ Pod::Spec.new do |s|
   s.source_files = "FDModel/**/*.{h,m}"
   s.framework  = "Foundation"
   s.requires_arc = true
+  s.dependency "FDFoundationKit"
 end
