@@ -127,7 +127,7 @@ static FDModelProvider *_sharedInstance;
 		}
 		
 		// If the parent model class did not return a model class ask the block for the model class represented by the dictionary.
-		if (modelClassBlock != nil)
+		if (modelClass != nil && modelClassBlock != nil)
 		{
 			modelClass = modelClassBlock(parentRemoteKeyPath, object);
 		}
