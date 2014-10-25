@@ -127,7 +127,8 @@ static FDModelProvider *_sharedInstance;
 		}
 		
 		// If the parent model class did not return a model class ask the block for the model class represented by the dictionary.
-		if (modelClass == nil && modelClassBlock != nil)
+		if (modelClass == nil 
+			&& modelClassBlock != nil)
 		{
 			modelClass = modelClassBlock(parentRemoteKeyPath, object);
 		}
@@ -156,7 +157,7 @@ static FDModelProvider *_sharedInstance;
 			
 			return dictionary;
 		}
-		// If the delegate returned a model class populate an instance of it.
+		// If the model class block returned a model class populate an instance of it.
 		else
 		{
 			// Ensure the model class is a subclass of FDModel.
@@ -190,7 +191,7 @@ static FDModelProvider *_sharedInstance;
 					[model modelWillBeginParsingRemoteKeyPath: remoteKeyPath];
 				#endif
 					
-					// Load the object for the remote key path and attempt to transform it to a local model.
+					// Load the object for the remote key path.
 					id remoteObject = [object valueForKeyPath: remoteKeyPath];
 					
 					// If the remote key path does not exist on the object ignore it and move onto the next item. There is no point in dealing with a remote key path that does not exist because it could only delete data that currently exists.
@@ -198,136 +199,140 @@ static FDModelProvider *_sharedInstance;
 					{
 						return;
 					}
-					// If the remote object is NSNull make it nil to prevent the inevitable crash from working with NSNull objects. This will still allow the property being set to be cleared.
-					else if (remoteObject == [NSNull null])
-					{
-						remoteObject = nil;
-					}
-					
-					// If a local transformer has been defined use it instead of attempting to transform the object into local models.
-					id transformedObject = nil;
-					
-					NSValueTransformer *valueTransformer = [modelClass transformerForKey: localKeyPath];
-					if (valueTransformer != nil)
-					{
-						transformedObject = [valueTransformer transformedValue: remoteObject];
-					}
-					else
-					{
-						transformedObject = [self _parseObject: remoteObject 
-							parentModelClass: modelClass 
-							parentRemoteKeypath: remoteKeyPath 
-							modelClassBlock: modelClassBlock];
-					}
 					
 					// Get the property info on the property that is about to be set.
 					FDDeclaredProperty *declaredProperty = [modelClass declaredPropertyForKeyPath: localKeyPath];
 					
-					// If the transformed object is not nil check if there are any common transforms that can be performed on the object before it is set on the property.
-					if (transformedObject != nil)
+					id transformedObject = nil;
+					
+					// If the remote object is not NSNull attempt to transform the remote object into local models. If the remote object is NSNull do nothing and allow the property being set to be cleared.
+					if (remoteObject != [NSNull null])
 					{
-						// If the property being set is of type FDModel and the transformed object is a NSString or NSValue it is possible that the string is the unique identifier for the model. Check and see if an instance of model class with that identifier exists.
-						if ([declaredProperty.type isSubclassOfClass: [FDModel class]] == YES 
-							&& ([transformedObject isKindOfClass: [NSString class]] == YES 
-								|| [transformedObject isKindOfClass: [NSValue class]] == YES))
+						// If a local transformer has been defined use it on the remote object.
+						NSValueTransformer *valueTransformer = [modelClass transformerForKey: localKeyPath];
+						if (valueTransformer != nil)
 						{
-							// Ask the block for the model class represented by the transformed object.
-							Class modelClass = nil;
-							if (modelClassBlock != nil)
-							{
-								modelClass = modelClassBlock(remoteKeyPath, transformedObject);
-							}
-							
-							// If the model class is NSNull ignore the object entirely.
-							if (modelClass == [NSNull class])
-							{
-								return;
-							}
-							
-							// Ensure the model class is a subclass of FDModel.
-							if ([modelClass isSubclassOfClass: [FDModel class]] == NO)
-							{
-								[NSException raise: NSInternalInconsistencyException 
-									format: @"The model class for '%@' is not a subclass of FDModel.", 
-										transformedObject];
-								
-								return;
-							}
-							
-							// If the model class is still nil use the declared property type.
-							if (modelClass == nil)
-							{
-								modelClass = declaredProperty.type;
-							}
-							
-							transformedObject = [modelClass modelWithIdentifier: transformedObject];
+							transformedObject = [valueTransformer transformedValue: remoteObject];
 						}
-						// If the property being set is of type FDModel and the transformed object is still a NSDictionary attempt to transform the dictionary into a instance of the FDModel class.
-						else if ([declaredProperty.type isSubclassOfClass: [FDModel class]] == YES 
-							&& [transformedObject isKindOfClass: [NSDictionary class]] == YES)
+						// If there is no local transformer attempt to transform the remote object into the property type being set.
+						else
 						{
-							transformedObject = [self _parseObject: transformedObject 
-								parentModelClass: parentModelClass 
-								parentRemoteKeypath: remoteKeyPath 
-								modelClassBlock: ^Class(NSString *parentKey, id value)
-									{
-										if (parentKey == remoteKeyPath)
+							// If the property being set is of type FDModel and the remote object is a NSString or NSValue it is possible that the string is the unique identifier for the model. Check and see if an instance of model class with that identifier exists.
+							if ([declaredProperty.type isSubclassOfClass: [FDModel class]] == YES 
+								&& ([remoteObject isKindOfClass: [NSString class]] == YES 
+									|| [remoteObject isKindOfClass: [NSValue class]] == YES))
+							{
+								// Ask the block for the model class represented by the remote object.
+								Class modelClass = nil;
+								if (modelClassBlock != nil)
+								{
+									modelClass = modelClassBlock(remoteKeyPath, remoteObject);
+								}
+								
+								// If the model class is NSNull ignore the object entirely.
+								if (modelClass == [NSNull class])
+								{
+									return;
+								}
+								
+								// Ensure the model class is a subclass of FDModel.
+								if ([modelClass isSubclassOfClass: [FDModel class]] == NO)
+								{
+									[NSException raise: NSInternalInconsistencyException 
+										format: @"The model class for '%@' is not a subclass of FDModel.", 
+											remoteObject];
+									
+									return;
+								}
+								
+								// If the model class is still nil use the declared property type.
+								if (modelClass == nil)
+								{
+									modelClass = declaredProperty.type;
+								}
+								
+								transformedObject = [modelClass modelWithIdentifier: remoteObject];
+							}
+							// If the property being set is of type FDModel and the remote object is a NSDictionary attempt to transform the dictionary into an instance of the FDModel class.
+							else if ([declaredProperty.type isSubclassOfClass: [FDModel class]] == YES 
+								&& [remoteObject isKindOfClass: [NSDictionary class]] == YES)
+							{
+								transformedObject = [self _parseObject: remoteObject 
+									parentModelClass: parentModelClass 
+									parentRemoteKeypath: remoteKeyPath 
+									modelClassBlock: ^Class(NSString *parentKey, id value)
 										{
-											return declaredProperty.type;
-										}
-										
-										if (modelClassBlock != nil)
-										{
-											Class modelClass = modelClassBlock(remoteKeyPath, transformedObject);
+											Class modelClass = modelClassBlock(parentKey, value);
+											
+											if (parentKey == remoteKeyPath 
+												&& modelClass == nil)
+											{
+												modelClass = declaredProperty.type;
+											}
 											
 											return modelClass;
-										}
-										
-										return nil;
-									} ];
+										} ];
+							}
+							// If the property being set is a NSURL and the remote object is a NSString convert the string to a NSURL object.
+							else if ([declaredProperty.type isSubclassOfClass: [NSURL class]] == YES 
+								&& [remoteObject isKindOfClass: [NSString class]] == YES)
+							{
+								transformedObject = [NSURL URLWithString: remoteObject];
+							}
+							// If the property being set is a NSDate and the remote object is a NSString attempt to convert the string to a NSDate using the date formatter.
+							else if ([declaredProperty.type isSubclassOfClass: [NSDate class]] == YES 
+								&& [remoteObject isKindOfClass: [NSString class]] == YES)
+							{
+								transformedObject = [_dateFormatter dateFromString: remoteObject];
+							}
+							// If the property being set is a NSString and the remote object is a NSNumber convert the number to a string.
+							else if ([declaredProperty.type isSubclassOfClass: [NSString class]] == YES 
+								&& [remoteObject isKindOfClass: [NSNumber class]] == YES)
+							{
+								transformedObject = [remoteObject stringValue];
+							}
+							// If the property being set is a NSNumber and the remote object is a NSString convert the string to a number.
+							else if ([declaredProperty.type isSubclassOfClass: [NSNumber class]] == YES
+								&& [remoteObject isKindOfClass: [NSString class]] == YES)
+							{
+								double value = [remoteObject doubleValue];
+								transformedObject = @(value);
+							}
+							// If the remote object is a collection object and is the same type as the property type being set attempt to transformation the collection into local models.
+							else if ([remoteObject isKindOfClass: declaredProperty.type] == YES 
+								&& ([declaredProperty.type isSubclassOfClass: [NSArray class]] == YES 
+									|| [declaredProperty.type isSubclassOfClass: [NSDictionary class]] == YES))
+							{
+								transformedObject = [self _parseObject: remoteObject 
+									parentModelClass: modelClass 
+									parentRemoteKeypath: remoteKeyPath 
+									modelClassBlock: modelClassBlock];
+							}
+							// If no transformations were valid attempt to set the remote object on the property.
+							else
+							{
+								transformedObject = remoteObject;
+							}
 						}
-						// If the property being set is a NSURL and the transformed object is a NSString convert the string to a NSURL object.
-						else if ([declaredProperty.type isSubclassOfClass: [NSURL class]] == YES 
-							&& [transformedObject isKindOfClass: [NSString class]] == YES)
-						{
-							transformedObject = [NSURL URLWithString: transformedObject];
-						}
-						// If the property being set is a NSDate and the transformed object is a NSString attempt to convert the string to a NSDate using the data client's date formatter.
-						else if ([declaredProperty.type isSubclassOfClass: [NSDate class]] == YES 
-							&& [transformedObject isKindOfClass: [NSString class]] == YES)
-						{
-							transformedObject = [_dateFormatter dateFromString: transformedObject];
-						}
-						// If the property being set is a NSString and the transformed object is a NSNumber convert the number to a string.
-						else if ([declaredProperty.type isSubclassOfClass: [NSString class]] == YES 
-							&& [transformedObject isKindOfClass: [NSNumber class]] == YES)
-						{
-							transformedObject = [transformedObject stringValue];
-						}
-						// If the property being set is a NSNumber and the transformed object is a NSString convert the string to a number.
-						else if ([declaredProperty.type isSubclassOfClass: [NSNumber class]] == YES
-							&& [transformedObject isKindOfClass: [NSString class]] == YES)
-						{
-							double value = [transformedObject doubleValue];
-							transformedObject = @(value);
-						}
-						
-						// If the transformed object is not the same type as the property that is being set stop parsing this remote key path.
-						if (declaredProperty.type != nil 
-							 && [transformedObject isKindOfClass: declaredProperty.type] == NO)
-						{
-							return;
-						}
-					}
-					// If the transformed object is nil and the declared property is a scalar type do not bother trying to set it because it will only result in an exception.
-					else if (declaredProperty.type == nil)
-					{
-						return;
 					}
 					
 				#if DEBUG
 					[model modelDidFinishParsingRemoteKeyPath: remoteKeyPath];
 				#endif
+					
+					// If the transformed object is not the same type as the property that is being set stop parsing and move onto the next item because there is no point in attempting to set it since it will always result in nil.
+					if (transformedObject != nil 
+						&& declaredProperty.type != nil 
+						&& [transformedObject isKindOfClass: declaredProperty.type] == NO)
+					{
+						return;
+					}
+					// If the transformed object is nil and the declared property is a scalar type do not bother trying to set it because it will only result in an exception.
+					else if (transformedObject == nil 
+						&& declaredProperty.type == nil)
+					{
+						return;
+					}
 					
 					@try
 					{
