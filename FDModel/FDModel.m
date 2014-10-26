@@ -183,6 +183,13 @@ static NSMutableDictionary *_existingModelsByClass;
 				NSArray *declaredProperties = [[model class] declaredPropertiesForSubclass: [FDModel class]];
 				for (FDDeclaredProperty *declaredProperty in declaredProperties)
 				{
+					// If the property being set is a read-only property with no backing instance variable setValue:forKey: will always throw an exception so ignore the property. This is indicative of a computed property so it does not need to be set anyway.
+					if (declaredProperty.isReadonly == YES 
+						&& declaredProperty.backingInstanceVariableName == nil)
+					{
+						continue;
+					}
+					
 					NSString *key = declaredProperty.name;
 					id value = nil;
 					
@@ -226,6 +233,13 @@ static NSMutableDictionary *_existingModelsByClass;
 	NSArray *declaredProperties = [[model class] declaredPropertiesForSubclass: [FDModel class]];
 	for (FDDeclaredProperty *declaredProperty in declaredProperties)
 	{
+		// If the property being set is a read-only property with no backing instance variable setValue:forKey: will always throw an exception so ignore the property. This is indicative of a computed property so it does not need to be set anyway.
+		if (declaredProperty.isReadonly == YES 
+			&& declaredProperty.backingInstanceVariableName == nil)
+		{
+			continue;
+		}
+		
 		NSString *key = declaredProperty.name;
 		id value = nil;
 		
@@ -322,6 +336,13 @@ static NSMutableDictionary *_existingModelsByClass;
 	NSArray *declaredProperties = [[self class] declaredPropertiesForSubclass: [FDModel class]];
 	for (FDDeclaredProperty *declaredProperty in declaredProperties)
 	{
+		// If the property being encoded is a read-only property with no backing instance variable it is indicative of a computed property which will always throw an exception when setValue:forKey: is called on it so there is no need to encode this information because it will never be set.
+		if (declaredProperty.isReadonly == YES 
+			&& declaredProperty.backingInstanceVariableName == nil)
+		{
+			continue;
+		}
+		
 		NSString *key = declaredProperty.name;
 		id value = [self valueForKey: key];
 		[coder encodeObject: value 
