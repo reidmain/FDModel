@@ -170,6 +170,13 @@ Attempts to save the model to the model store.
 */
 - (BOOL)save;
 
+/**
+Attempts to delete the model from the model store.
+
+@return Returns YES if the model was successfully saved to the model store otherwise NO.
+*/
+- (BOOL)delete;
+
 
 #pragma mark - Debug Methods
 

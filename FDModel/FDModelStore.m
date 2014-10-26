@@ -18,5 +18,10 @@
 	return NO;
 }
 
+- (BOOL)deleteModel:(FDModel *)model
+{
+	return NO;
+}
+
 
 @end

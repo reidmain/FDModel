@@ -38,5 +38,14 @@ Attempts to save the model to the model store.
 */
 - (BOOL)saveModel: (FDModel *)model;
 
+/**
+Attempts to delete the model from the model store.
+
+@param The model to delete from the model store.
+
+@return Returns YES if the model was successfully deleted from the model store otherwise NO.
+*/
+- (BOOL)deleteModel: (FDModel *)model;
+
 
 @end

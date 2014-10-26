@@ -42,6 +42,17 @@
 	return saveSuccessful;
 }
 
+- (BOOL)deleteModel: (FDModel *)model
+{
+	NSString *modelFilePath = [self _modelFilePathForIdentifier: model.identifier];
+	
+	NSFileManager *defaultFileManager = [NSFileManager defaultManager];
+	BOOL deleteSuccessful = [defaultFileManager removeItemAtPath: modelFilePath 
+		error: nil];
+	
+	return deleteSuccessful;
+}
+
 
 #pragma mark - Private Methods
 

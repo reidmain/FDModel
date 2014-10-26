@@ -327,6 +327,13 @@ static NSMutableDictionary *_existingModelsByClass;
 	return saveSuccessful;
 }
 
+- (BOOL)delete
+{
+	BOOL deleteSuccessful = [_modelStore deleteModel: self];
+	
+	return deleteSuccessful;
+}
+
 
 #pragma mark - NSCoding Methods
 
