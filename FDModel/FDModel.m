@@ -65,6 +65,21 @@ static NSMutableDictionary *_existingModelsByClass;
 	return model;
 }
 
++ (instancetype)existingModelWithIdentifier: (id)identifier
+{
+	// Synchronized in case the _existingModelsByClass array is mutated on another thread.
+	@synchronized([self class])
+	{
+		NSString *modelClassAsString = NSStringFromClass([self class]);
+		
+		FDCache *existingModels = [_existingModelsByClass objectForKey: modelClassAsString];
+		
+		FDModel *model = [existingModels objectForKey: identifier];
+		
+		return model;
+	}
+}
+
 - (instancetype)initWithIdentifier: (id)identifier 
 	initBlock: (FDModelInitBlock)initBlock 
 	customizationBlock: (FDModelCustomizationBlock)customizationBlock
