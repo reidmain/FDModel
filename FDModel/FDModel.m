@@ -7,7 +7,7 @@
 #pragma mark Class Variables
 
 static FDModelStore *_modelStore;
-static NSMutableDictionary *_existingModelsByClass;
+static FDThreadSafeMutableDictionary *_existingModelsByClass;
 
 
 #pragma mark - Class Definition
@@ -28,7 +28,7 @@ static NSMutableDictionary *_existingModelsByClass;
 	if (classInitialized == NO)
 	{
 		_modelStore = [FDArchivedFileModelStore new];
-		_existingModelsByClass = [NSMutableDictionary new];
+		_existingModelsByClass = [FDThreadSafeMutableDictionary new];
 		
 		classInitialized = YES;
 	}
