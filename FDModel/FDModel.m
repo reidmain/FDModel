@@ -173,6 +173,21 @@ static FDThreadSafeMutableDictionary *_existingModelsByClass;
 
 #pragma mark - Public Methods
 
++ (instancetype)existingModelWithIdentifier: (id)identifier
+{
+	// Synchronized in case the _existingModelsByClass array is mutated on another thread.
+	@synchronized([self class])
+	{
+		NSString *modelClassAsString = NSStringFromClass([self class]);
+		
+		FDCache *existingModels = [_existingModelsByClass objectForKey: modelClassAsString];
+		
+		FDModel *model = [existingModels objectForKey: identifier];
+		
+		return model;
+	}
+}
+
 + (NSString *)remoteKeyPathForUniqueIdentifier
 {
 	// This method should be overridden by all subclasses.
