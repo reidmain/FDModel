@@ -76,6 +76,15 @@ This method uses the shared FDModelProvider instance to attempt to transform the
 + (instancetype)modelWithDictionary: (NSDictionary *)dictionary;
 
 /**
+ Queries the existing instances of this model for an instance with the specified identifier.
+ 
+@param The identifier with which to query for an existing instance.
+ 
+@return Returns either an instance of the model with the specified identifier, or nil if no instance with the identifier exists.
+ */
++ (instancetype)existingModelWithIdentifier: (id)identifier;
+
+/**
 Returns an initialized model with the specified identifier.
 
 This is the designated initializer for this class.
