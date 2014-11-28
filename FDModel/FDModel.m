@@ -173,21 +173,6 @@ static FDThreadSafeMutableDictionary *_existingModelsByClass;
 
 #pragma mark - Public Methods
 
-+ (instancetype)existingModelWithIdentifier: (id)identifier
-{
-	// Synchronized in case the _existingModelsByClass array is mutated on another thread.
-	@synchronized([self class])
-	{
-		NSString *modelClassAsString = NSStringFromClass([self class]);
-		
-		FDCache *existingModels = [_existingModelsByClass objectForKey: modelClassAsString];
-		
-		FDModel *model = [existingModels objectForKey: identifier];
-		
-		return model;
-	}
-}
-
 + (NSString *)remoteKeyPathForUniqueIdentifier
 {
 	// This method should be overridden by all subclasses.
@@ -236,6 +221,21 @@ static FDThreadSafeMutableDictionary *_existingModelsByClass;
 + (void)setModelStore: (FDModelStore *)modelStore
 {
 	_modelStore = modelStore;
+}
+
++ (instancetype)existingModelWithIdentifier: (id)identifier
+{
+	// Because models can be created on any thread this code needs to be synchronized on the class being created to ensure that if a model with the identifer is in the process of being created this method will return that model object.
+	@synchronized ([self class])
+	{
+		NSString *modelClassAsString = NSStringFromClass([self class]);
+		
+		FDCache *existingModels = [_existingModelsByClass objectForKey: modelClassAsString];
+		
+		FDModel *model = [existingModels objectForKey: identifier];
+		
+		return model;
+	}
 }
 
 + (NSArray *)existingModels

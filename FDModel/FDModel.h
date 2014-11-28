@@ -118,15 +118,6 @@ Creates a shallow copy of the object. Any properties that reference objects will
 #pragma mark - Static Methods
 
 /**
- Queries the existing instances of this model for an instance with the specified identifier.
- 
- @param The identifier with which to query for an existing instance.
- 
- @return Returns either an instance of the model with the specified identifier, or nil if no instance with the identifier exists.
- */
-+ (instancetype)existingModelWithIdentifier: (id)identifier;
-
-/**
 Returns the key path that will be used to retrieve the identifier from the object that is being used to create a instance of this FDModel.
 */
 + (NSString *)remoteKeyPathForUniqueIdentifier;
@@ -168,6 +159,15 @@ By default FDModel uses FDArchivedFileModelStore.
 @see FDModelStore
 */
 + (void)setModelStore: (FDModelStore *)modelStore;
+
+/**
+Queries the existing instances of this model for an instance with the specified identifier.
+
+@param The identifier with which to query for an existing instance.
+
+@return Returns either an instance of the model with the specified identifier, or nil if no instance with the identifier exists.
+*/
++ (instancetype)existingModelWithIdentifier: (id)identifier;
 
 /**
 Returns a new array containing all of the instances of the model that FDModel is currently tracking.
