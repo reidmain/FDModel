@@ -160,6 +160,11 @@ By default FDModel uses FDArchivedFileModelStore.
 */
 + (void)setModelStore: (FDModelStore *)modelStore;
 
+/**
+Returns a new array containing all of the instances of the model that FDModel is currently tracking.
+*/
++ (NSArray *)existingModels;
+
 
 #pragma mark - Instance Methods
 

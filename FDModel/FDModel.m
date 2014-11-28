@@ -223,6 +223,17 @@ static FDThreadSafeMutableDictionary *_existingModelsByClass;
 	_modelStore = modelStore;
 }
 
++ (NSArray *)existingModels
+{
+	NSString *modelClassAsString = NSStringFromClass([self class]);
+	
+	FDCache *existingModels = [_existingModelsByClass objectForKey: modelClassAsString];
+	
+	NSArray *allModels = [existingModels allObjects];
+	
+	return allModels;
+}
+
 - (BOOL)save
 {
 	BOOL saveSuccessful = [_modelStore saveModel: self];
