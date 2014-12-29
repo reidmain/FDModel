@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2715C7AD1A51210800220CC5 /* games.json in Resources */ = {isa = PBXBuildFile; fileRef = 2715C7AC1A51210800220CC5 /* games.json */; };
 		27759C6419C6994C008D9F3E /* FDGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 27759C6319C6994C008D9F3E /* FDGame.m */; };
 		27A24B6619C3C48C00BA5D33 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A24B6519C3C48C00BA5D33 /* main.m */; };
 		27A24B6B19C3C48C00BA5D33 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27A24B6A19C3C48C00BA5D33 /* Images.xcassets */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2715C7AC1A51210800220CC5 /* games.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = games.json; sourceTree = "<group>"; };
 		27759C6219C6994C008D9F3E /* FDGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDGame.h; sourceTree = "<group>"; };
 		27759C6319C6994C008D9F3E /* FDGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDGame.m; sourceTree = "<group>"; };
 		27A24B5F19C3C48C00BA5D33 /* FDModel iOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FDModel iOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				27A24B6A19C3C48C00BA5D33 /* Images.xcassets */,
+				2715C7AC1A51210800220CC5 /* games.json */,
 				27A24B6C19C3C48C00BA5D33 /* InfoPlist.strings */,
 				27A24B6E19C3C48C00BA5D33 /* iTunesArtwork */,
 				27A24B7019C3C48C00BA5D33 /* iTunesArtwork@2x */,
@@ -243,6 +246,7 @@
 			files = (
 				27A24B7119C3C48C00BA5D33 /* iTunesArtwork@2x in Resources */,
 				27A24B6B19C3C48C00BA5D33 /* Images.xcassets in Resources */,
+				2715C7AD1A51210800220CC5 /* games.json in Resources */,
 				27A24B6F19C3C48C00BA5D33 /* iTunesArtwork in Resources */,
 				27A24B6D19C3C48C00BA5D33 /* InfoPlist.strings in Resources */,
 			);

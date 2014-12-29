@@ -1,0 +1,888 @@
+[	
+	{
+		"id":"93",
+		"GameTitle":"Monster Hunter 2",
+		"ReleaseDate":"02/16/2006",
+		"Platform":"Sony Playstation 2"
+	},
+	{
+		"id":"4426",
+		"GameTitle":"Monster Hunter Tri",
+		"ReleaseDate":"04/20/2010",
+		"Platform":"Nintendo Wii"
+	},
+	{
+		"id":"13102",
+		"GameTitle":"Monster Hunter",
+		"ReleaseDate":"09/21/2004",
+		"Platform":"Sony Playstation 2"
+	},
+	{
+		"id":"18119",
+		"GameTitle":"Monster Hunter G",
+		"ReleaseDate":"04/03/2009",
+		"Platform":"Nintendo Wii"
+	},
+	{
+		"id":"7105",
+		"GameTitle":"Monster Hunter Freedom",
+		"ReleaseDate":"05/23/2006",
+		"Platform":"Sony PSP"
+	},
+	{
+		"id":"15181",
+		"GameTitle":"Monster Hunter 3 Ultimate",
+		"ReleaseDate":"03/19/2013",
+		"Platform":"Nintendo 3DS"
+	},
+	{
+		"id":"15182",
+		"GameTitle":"Monster Hunter 3 Ultimate",
+		"ReleaseDate":"03/19/2013",
+		"Platform":"Nintendo Wii U"
+	},
+	{
+		"id":"19503",
+		"GameTitle":"Monster Hunter Portable 2nd G",
+		"ReleaseDate":"06/23/2009",
+		"Platform":"Sony PSP"
+	},
+	{
+		"id":"20078",
+		"GameTitle":"Monster Hunter Freedom 2",
+		"ReleaseDate":"08/28/2008",
+		"Platform":"Sony PSP"
+	},
+	{
+		"id":"14633",
+		"GameTitle":"Monster Hunter Freedom Unite",
+		"ReleaseDate":"06/22/2009",
+		"Platform":"Sony PSP"
+	},
+	{
+		"id":"2106",
+		"GameTitle":"Spy Hunter",
+		"ReleaseDate":"09/01/1987",
+		"Platform":"Nintendo Entertainment System (NES)"
+	},
+	{
+		"id":"3702",
+		"GameTitle":"Spy Hunter",
+		"ReleaseDate":"05/19/2002",
+		"Platform":"Nintendo Game Boy Advance"
+	},
+	{
+		"id":"5216",
+		"GameTitle":"Spy Hunter",
+		"Platform":"Atari 5200"
+	},
+	{
+		"id":"5401",
+		"GameTitle":"Spy Hunter 2",
+		"ReleaseDate":"11/20/2003",
+		"Platform":"Sony Playstation 2"
+	},
+	{
+		"id":"6409",
+		"GameTitle":"Spy Hunter",
+		"ReleaseDate":"06/03/1983",
+		"Platform":"Commodore 64"
+	},
+	{
+		"id":"7851",
+		"GameTitle":"Sub Hunter",
+		"Platform":"Arcade"
+	},
+	{
+		"id":"8824",
+		"GameTitle":"Spy Hunter",
+		"Platform":"Arcade"
+	},
+	{
+		"id":"9799",
+		"GameTitle":"Spy Hunter",
+		"ReleaseDate":"09/24/2001",
+		"Platform":"Sony Playstation 2"
+	},
+	{
+		"id":"9800",
+		"GameTitle":"Spy Hunter: Nowhere to Run",
+		"ReleaseDate":"09/05/2006",
+		"Platform":"Sony Playstation 2"
+	},
+	{
+		"id":"11463",
+		"GameTitle":"Spy Hunter",
+		"ReleaseDate":"03/11/2002",
+		"Platform":"Nintendo GameCube"
+	},
+	{
+		"id":"12451",
+		"GameTitle":"Spy Hunter",
+		"ReleaseDate":"10/09/2012",
+		"Platform":"Sony Playstation Vita"
+	},
+	{
+		"id":"13179",
+		"GameTitle":"Spy Hunter",
+		"ReleaseDate":"10/09/2012",
+		"Platform":"Nintendo 3DS"
+	},
+	{
+		"id":"13188",
+		"GameTitle":"Monster 4x4",
+		"ReleaseDate":"10/09/2012",
+		"Platform":"Nintendo 3DS"
+	},
+	{
+		"id":"14445",
+		"GameTitle":"Spy Hunter",
+		"ReleaseDate":"05/30/2003",
+		"Platform":"Mac OS"
+	},
+	{
+		"id":"17778",
+		"GameTitle":"Monster Max",
+		"Platform":"Nintendo Game Boy"
+	},
+	{
+		"id":"22015",
+		"GameTitle":"Lil' Monster",
+		"ReleaseDate":"08/01/2000",
+		"Platform":"Nintendo Game Boy Color"
+	},
+	{
+		"id":"22182",
+		"GameTitle":"Spy Hunter",
+		"ReleaseDate":"01/01/1983",
+		"Platform":"Atari 2600"
+	},
+	{
+		"id":"22962",
+		"GameTitle":"Ed Hunter",
+		"ReleaseDate":"05/17/1999",
+		"Platform":"PC"
+	},
+	{
+		"id":"23979",
+		"GameTitle":"Monster Jam",
+		"ReleaseDate":"11/19/2007",
+		"Platform":"Nintendo Wii"
+	},
+	{
+		"id":"24228",
+		"GameTitle":"Monster Lab",
+		"ReleaseDate":"12/08/2008",
+		"Platform":"Nintendo Wii"
+	},
+	{
+		"id":"382",
+		"GameTitle":"Super Spy Hunter",
+		"ReleaseDate":"01/01/1991",
+		"Platform":"Nintendo Entertainment System (NES)"
+	},
+	{
+		"id":"729",
+		"GameTitle":"Wonder Boy in Monster World",
+		"ReleaseDate":"1993",
+		"Platform":"Sega Genesis"
+	},
+	{
+		"id":"1120",
+		"GameTitle":"Bass Hunter 64",
+		"ReleaseDate":"06/30/1999",
+		"Platform":"Nintendo 64"
+	},
+	{
+		"id":"1952",
+		"GameTitle":"Monster in My Pocket",
+		"ReleaseDate":"01/01/1992",
+		"Platform":"Nintendo Entertainment System (NES)"
+	},
+	{
+		"id":"1954",
+		"GameTitle":"Monster Party",
+		"ReleaseDate":"06/01/1989",
+		"Platform":"Nintendo Entertainment System (NES)"
+	},
+	{
+		"id":"2502",
+		"GameTitle":"Maze Hunter 3-D",
+		"ReleaseDate":"1987",
+		"Platform":"Sega Master System"
+	},
+	{
+		"id":"2649",
+		"GameTitle":"Monster World IV",
+		"ReleaseDate":"04/01/1994",
+		"Platform":"Sega Genesis"
+	},
+	{
+		"id":"2722",
+		"GameTitle":"Cyborg Hunter",
+		"ReleaseDate":"01/01/1988",
+		"Platform":"Sega Master System"
+	},
+	{
+		"id":"3109",
+		"GameTitle":"Wonder Boy in Monster Land",
+		"ReleaseDate":"07/01/1987",
+		"Platform":"Sega Master System"
+	},
+	{
+		"id":"3110",
+		"GameTitle":"Wonder Boy in Monster World",
+		"ReleaseDate":"01/01/1993",
+		"Platform":"Sega Master System"
+	},
+	{
+		"id":"4732",
+		"GameTitle":"Wonder Boy III - Monster Lair",
+		"ReleaseDate":"12/22/1990",
+		"Platform":"Sega Mega Drive"
+	},
+	{
+		"id":"5303",
+		"GameTitle":"Frankenstein's Monster",
+		"ReleaseDate":"01/01/1983",
+		"Platform":"Atari 2600"
+	},
+	{
+		"id":"6309",
+		"GameTitle":"Treasure Hunter G",
+		"ReleaseDate":"05/24/1996",
+		"Platform":"Super Nintendo (SNES)"
+	},
+	{
+		"id":"6989",
+		"GameTitle":"Hunter: The Reckoning",
+		"ReleaseDate":"11/18/2002",
+		"Platform":"Nintendo GameCube"
+	},
+	{
+		"id":"7008",
+		"GameTitle":"Monster House",
+		"ReleaseDate":"07/18/2006",
+		"Platform":"Nintendo GameCube"
+	},
+	{
+		"id":"7130",
+		"GameTitle":"Hunter's Moon",
+		"ReleaseDate":"07/15/1987",
+		"Platform":"Commodore 64"
+	},
+	{
+		"id":"8103",
+		"GameTitle":"Wonder Boy III - Monster Lair",
+		"ReleaseDate":"01/01/1988",
+		"Platform":"Sega Mega Drive"
+	},
+	{
+		"id":"8576",
+		"GameTitle":"Monster House",
+		"ReleaseDate":"07/18/2006",
+		"Platform":"Sony Playstation 2"
+	},
+	{
+		"id":"8756",
+		"GameTitle":"Wonder Boy in Monster Land",
+		"Platform":"Arcade"
+	},
+	{
+		"id":"8778",
+		"GameTitle":"Monster House",
+		"ReleaseDate":"07/18/2006",
+		"Platform":"Nintendo DS"
+	},
+	{
+		"id":"9348",
+		"GameTitle":"Depth Hunter",
+		"ReleaseDate":"04/20/2012",
+		"Platform":"PC"
+	},
+	{
+		"id":"9733",
+		"GameTitle":"Monster Rancher 3",
+		"ReleaseDate":"09/25/2001",
+		"Platform":"Sony Playstation 2"
+	},
+	{
+		"id":"9734",
+		"GameTitle":"Monster Rancher 4",
+		"ReleaseDate":"11/13/2003",
+		"Platform":"Sony Playstation 2"
+	},
+	{
+		"id":"10106",
+		"GameTitle":"The Last Bounty Hunter",
+		"ReleaseDate":"11/01/1995",
+		"Platform":"3DO"
+	},
+	{
+		"id":"11657",
+		"GameTitle":"Vampire Hunter D",
+		"ReleaseDate":"09/25/2000",
+		"Platform":"Sony Playstation"
+	},
+	{
+		"id":"12205",
+		"GameTitle":"Battle Hunter",
+		"ReleaseDate":"06/01/2001",
+		"Platform":"Sony Playstation"
+	},
+	{
+		"id":"13135",
+		"GameTitle":"Solatorobo: Red the Hunter",
+		"ReleaseDate":"09/27/2011",
+		"Platform":"Nintendo DS"
+	},
+	{
+		"id":"13853",
+		"GameTitle":"Monster Tale",
+		"ReleaseDate":"03/22/2011",
+		"Platform":"Nintendo DS"
+	},
+	{
+		"id":"15167",
+		"GameTitle":"Monster Rancher DS",
+		"ReleaseDate":"08/03/2010",
+		"Platform":"Nintendo DS"
+	},
+	{
+		"id":"16464",
+		"GameTitle":"Monster World IV",
+		"ReleaseDate":"05/22/2012",
+		"Platform":"Sony Playstation 3"
+	},
+	{
+		"id":"16475",
+		"GameTitle":"Wonder Boy in Monster Land",
+		"ReleaseDate":"05/22/2012",
+		"Platform":"Sony Playstation 3"
+	},
+	{
+		"id":"16476",
+		"GameTitle":"Wonder Boy in Monster Land",
+		"Platform":"Commodore 64"
+	},
+	{
+		"id":"16478",
+		"GameTitle":"Wonder Boy in Monster World",
+		"ReleaseDate":"05/02/2012",
+		"Platform":"PC"
+	},
+	{
+		"id":"16479",
+		"GameTitle":"Wonder Boy in Monster World",
+		"ReleaseDate":"05/22/2012",
+		"Platform":"Sony Playstation 3"
+	},
+	{
+		"id":"16700",
+		"GameTitle":"Monster Loves You!",
+		"ReleaseDate":"03/18/2013",
+		"Platform":"PC"
+	},
+	{
+		"id":"17065",
+		"GameTitle":"Hunter: The Reckoning",
+		"ReleaseDate":"05/23/2003",
+		"Platform":"Microsoft Xbox"
+	},
+	{
+		"id":"18402",
+		"GameTitle":"City Hunter",
+		"ReleaseDate":"03/02/1990",
+		"Platform":"TurboGrafx 16"
+	},
+	{
+		"id":"18849",
+		"GameTitle":"Wonder Boy III Monster Lair",
+		"ReleaseDate":"08/01/1989",
+		"Platform":"TurboGrafx 16"
+	},
+	{
+		"id":"18968",
+		"GameTitle":"Silent Hunter II",
+		"ReleaseDate":"11/06/2001",
+		"Platform":"PC"
+	},
+	{
+		"id":"19479",
+		"GameTitle":"Abbigale and the Monster",
+		"ReleaseDate":"03/01/2013",
+		"Platform":"Ouya"
+	},
+	{
+		"id":"19724",
+		"GameTitle":"The Ocean Hunter",
+		"ReleaseDate":"10/01/1998",
+		"Platform":"Arcade"
+	},
+	{
+		"id":"20048",
+		"GameTitle":"Monster Rancher",
+		"ReleaseDate":"11/30/1997",
+		"Platform":"Sony Playstation"
+	},
+	{
+		"id":"21322",
+		"GameTitle":"Monster Rancher 2",
+		"ReleaseDate":"02/25/1999",
+		"Platform":"Sony Playstation"
+	},
+	{
+		"id":"21429",
+		"GameTitle":"Monster Monpiece",
+		"ReleaseDate":"06/27/2014",
+		"Platform":"Sony Playstation Vita"
+	},
+	{
+		"id":"21944",
+		"GameTitle":"Deer Hunter",
+		"ReleaseDate":"12/22/1999",
+		"Platform":"Nintendo Game Boy Color"
+	},
+	{
+		"id":"22475",
+		"GameTitle":"Silent Hunter III",
+		"ReleaseDate":"03/15/2005",
+		"Platform":"PC"
+	},
+	{
+		"id":"22912",
+		"GameTitle":"Shark Hunter",
+		"Platform":"Magnavox Odyssey 2"
+	},
+	{
+		"id":"23039",
+		"GameTitle":"Little Monster at School",
+		"ReleaseDate":"01/01/1993",
+		"Platform":"Philips CD-i"
+	},
+	{
+		"id":"23088",
+		"GameTitle":"Last Bounty Hunter, The",
+		"ReleaseDate":"01/01/1996",
+		"Platform":"Philips CD-i"
+	},
+	{
+		"id":"23211",
+		"GameTitle":"Silent Hunter",
+		"ReleaseDate":"03/25/1996",
+		"Platform":"PC"
+	},
+	{
+		"id":"23577",
+		"GameTitle":"Monster Racer",
+		"Platform":"Sony Playstation"
+	},
+	{
+		"id":"23815",
+		"GameTitle":"Monster Rancher EVO",
+		"ReleaseDate":"04/11/2006",
+		"Platform":"Sony Playstation 2"
+	},
+	{
+		"id":"24019",
+		"GameTitle":"Monster World 4",
+		"ReleaseDate":"04/01/1994",
+		"Platform":"Sega Mega Drive"
+	},
+	{
+		"id":"24534",
+		"GameTitle":"Elemental Monster",
+		"ReleaseDate":"09/13/2011",
+		"Platform":"Sony Playstation 3"
+	},
+	{
+		"id":"68",
+		"GameTitle":"Turok: Dinosaur Hunter",
+		"ReleaseDate":"03/04/1997",
+		"Platform":"Nintendo 64"
+	},
+	{
+		"id":"1146",
+		"GameTitle":"Monster Truck Madness 64",
+		"ReleaseDate":"07/30/1999",
+		"Platform":"Nintendo 64"
+	},
+	{
+		"id":"1933",
+		"GameTitle":"Frankenstein: The Monster Returns",
+		"ReleaseDate":"01/01/1990",
+		"Platform":"Nintendo Entertainment System (NES)"
+	},
+	{
+		"id":"1842",
+		"GameTitle":"Godzilla: Monster of Monsters",
+		"ReleaseDate":"12/09/1988",
+		"Platform":"Nintendo Entertainment System (NES)"
+	},
+	{
+		"id":"1955",
+		"GameTitle":"Monster Truck Rally",
+		"ReleaseDate":"09/01/1991",
+		"Platform":"Nintendo Entertainment System (NES)"
+	},
+	{
+		"id":"7101",
+		"GameTitle":"Mega Man Maverick Hunter X",
+		"ReleaseDate":"01/31/2006",
+		"Platform":"Sony PSP"
+	},
+	{
+		"id":"7714",
+		"GameTitle":"Monster 4x4: World Circuit",
+		"ReleaseDate":"11/19/2006",
+		"Platform":"Nintendo Wii"
+	},
+	{
+		"id":"8307",
+		"GameTitle":"Monster Jam: Path of Destruction",
+		"ReleaseDate":"11/09/2010",
+		"Platform":"Microsoft Xbox 360"
+	},
+	{
+		"id":"9641",
+		"GameTitle":"Cabela's Big Game Hunter",
+		"ReleaseDate":"11/06/2007",
+		"Platform":"Sony Playstation 2"
+	},
+	{
+		"id":"9732",
+		"GameTitle":"Monster Jam: Maximum Destruction",
+		"ReleaseDate":"06/13/2002",
+		"Platform":"Sony Playstation 2"
+	},
+	{
+		"id":"9846",
+		"GameTitle":"Yu-Gi-Oh! Capsule Monster Coliseum",
+		"ReleaseDate":"10/27/2004",
+		"Platform":"Sony Playstation 2"
+	},
+	{
+		"id":"10096",
+		"GameTitle":"Escape from Monster Manor",
+		"ReleaseDate":"01/01/1993",
+		"Platform":"3DO"
+	},
+	{
+		"id":"10483",
+		"GameTitle":"Top Hunter: Roddy & Cathy",
+		"ReleaseDate":"12/31/2007",
+		"Platform":"NeoGeo"
+	},
+	{
+		"id":"11245",
+		"GameTitle":"Frankenstein: Through the Eyes of the Monster",
+		"ReleaseDate":"01/01/1995",
+		"Platform":"Sega Saturn"
+	},
+	{
+		"id":"12555",
+		"GameTitle":"Dungeon Hunter: Alliance",
+		"ReleaseDate":"02/14/2012",
+		"Platform":"Sony Playstation Vita"
+	},
+	{
+		"id":"14298",
+		"GameTitle":"Sesame Street: Once Upon a Monster",
+		"ReleaseDate":"10/11/2011",
+		"Platform":"Microsoft Xbox 360"
+	},
+	{
+		"id":"14447",
+		"GameTitle":"Deer Hunter 2005",
+		"ReleaseDate":"09/28/2004",
+		"Platform":"PC"
+	},
+	{
+		"id":"14823",
+		"GameTitle":"Turok: Dinosaur Hunter",
+		"ReleaseDate":"03/04/1997",
+		"Platform":"PC"
+	},
+	{
+		"id":"15124",
+		"GameTitle":"Master of the Monster Lair",
+		"ReleaseDate":"10/21/2008",
+		"Platform":"Nintendo DS"
+	},
+	{
+		"id":"15141",
+		"GameTitle":"Cabela's Big Game Hunter",
+		"ReleaseDate":"11/06/2007",
+		"Platform":"Microsoft Xbox 360"
+	},
+	{
+		"id":"15464",
+		"GameTitle":"Dungeon Hunter: Alliance",
+		"ReleaseDate":"04/12/2011",
+		"Platform":"Sony Playstation 3"
+	},
+	{
+		"id":"15465",
+		"GameTitle":"Dungeon Hunter: Alliance",
+		"ReleaseDate":"11/11/2011",
+		"Platform":"Mac OS"
+	},
+	{
+		"id":"17005",
+		"GameTitle":"Hunter: The Reckoning Wayward",
+		"ReleaseDate":"09/09/2003",
+		"Platform":"Sony Playstation 2"
+	},
+	{
+		"id":"17469",
+		"GameTitle":"Monster Rancher Explorer",
+		"ReleaseDate":"10/01/2000",
+		"Platform":"Nintendo Game Boy Color"
+	},
+	{
+		"id":"17510",
+		"GameTitle":"Cookie Monster Munch",
+		"ReleaseDate":"10/02/1983",
+		"Platform":"Atari 2600"
+	},
+	{
+		"id":"17795",
+		"GameTitle":"Monster Truck Wars",
+		"Platform":"Sega Game Gear"
+	},
+	{
+		"id":"17985",
+		"GameTitle":"Garshasp: The Monster Slayer",
+		"ReleaseDate":"05/09/2011",
+		"Platform":"PC"
+	},
+	{
+		"id":"18752",
+		"GameTitle":"Wonderboy 6 Monster World 4",
+		"Platform":"Sega Genesis"
+	},
+	{
+		"id":"19452",
+		"GameTitle":"Monster Truck Madness",
+		"Platform":"Nintendo Game Boy Advance"
+	},
+	{
+		"id":"20839",
+		"GameTitle":"Ethan: Meteor Hunter",
+		"ReleaseDate":"10/22/2013",
+		"Platform":"PC"
+	},
+	{
+		"id":"20856",
+		"GameTitle":"Monster Trucks Mayhem",
+		"Platform":"Nintendo Game Boy Advance"
+	},
+	{
+		"id":"20863",
+		"GameTitle":"Monster Truck Mayhem",
+		"ReleaseDate":"09/22/2009",
+		"Platform":"Nintendo Wii"
+	},
+	{
+		"id":"20932",
+		"GameTitle":"Monster 4x4: Masters of Metal",
+		"ReleaseDate":"12/10/2003",
+		"Platform":"Nintendo GameCube"
+	},
+	{
+		"id":"21586",
+		"GameTitle":"Monster Truck Wars",
+		"ReleaseDate":"11/01/1994",
+		"Platform":"Nintendo Game Boy"
+	},
+	{
+		"id":"21701",
+		"GameTitle":"Monster Rancher Advance",
+		"ReleaseDate":"11/28/2001",
+		"Platform":"Nintendo Game Boy Advance"
+	},
+	{
+		"id":"22514",
+		"GameTitle":"Monster Jam Maximum Destruction",
+		"ReleaseDate":"11/19/2002",
+		"Platform":"Nintendo GameCube"
+	},
+	{
+		"id":"24261",
+		"GameTitle":"Big Game Hunter 2010",
+		"Platform":"Sony Playstation 3"
+	},
+	{
+		"id":"857",
+		"GameTitle":"Silent Hunter 5: Battle of the Atlantic",
+		"ReleaseDate":"03/02/2010",
+		"Platform":"PC"
+	},
+	{
+		"id":"18868",
+		"GameTitle":"Alex Hunter - Lord of The Mind",
+		"Platform":"PC"
+	},
+	{
+		"id":"4782",
+		"GameTitle":"Star Wars: Bounty Hunter",
+		"ReleaseDate":"11/19/2002",
+		"Platform":"Sony Playstation 2"
+	},
+	{
+		"id":"5454",
+		"GameTitle":"Silent Hunter 4: Wolves of the Pacific",
+		"ReleaseDate":"03/20/2007",
+		"Platform":"PC"
+	},
+	{
+		"id":"7053",
+		"GameTitle":"Star Wars: Bounty Hunter",
+		"ReleaseDate":"12/05/2002",
+		"Platform":"Nintendo GameCube"
+	},
+	{
+		"id":"7342",
+		"GameTitle":"Mace Griffin: Bounty Hunter",
+		"ReleaseDate":"06/19/2003",
+		"Platform":"Sony Playstation 2"
+	},
+	{
+		"id":"8006",
+		"GameTitle":"Mace Griffin: Bounty Hunter",
+		"ReleaseDate":"01/07/2004",
+		"Platform":"Microsoft Xbox"
+	},
+	{
+		"id":"8635",
+		"GameTitle":"Monster Rancher Battle Card GB",
+		"ReleaseDate":"04/01/2000",
+		"Platform":"Nintendo Game Boy Color"
+	},
+	{
+		"id":"8719",
+		"GameTitle":"Mace Griffin: Bounty Hunter",
+		"ReleaseDate":"01/24/2004",
+		"Platform":"PC"
+	},
+	{
+		"id":"8844",
+		"GameTitle":"Monster High: Ghoul Spirit",
+		"ReleaseDate":"10/25/2011",
+		"Platform":"Nintendo Wii"
+	},
+	{
+		"id":"12668",
+		"GameTitle":"Cabela's Big Game Hunter 2012",
+		"ReleaseDate":"09/27/2011",
+		"Platform":"Sony Playstation 3"
+	},
+	{
+		"id":"14003",
+		"GameTitle":"Monster Kingdom: Jewel Summoner",
+		"ReleaseDate":"02/19/2007",
+		"Platform":"Sony PSP"
+	},
+	{
+		"id":"14314",
+		"GameTitle":"Monster Mayhem: Build and Battle",
+		"ReleaseDate":"09/28/2009",
+		"Platform":"Nintendo Wii"
+	},
+	{
+		"id":"15140",
+		"GameTitle":"Cabela's Big Game Hunter 2012",
+		"ReleaseDate":"09/27/2011",
+		"Platform":"Microsoft Xbox 360"
+	},
+	{
+		"id":"15142",
+		"GameTitle":"Cabela's Big Game Hunter 2010",
+		"ReleaseDate":"09/29/2009",
+		"Platform":"Microsoft Xbox 360"
+	},
+	{
+		"id":"15919",
+		"GameTitle":"Monster Madness: Grave Danger",
+		"ReleaseDate":"08/05/2008",
+		"Platform":"Sony Playstation 3"
+	},
+	{
+		"id":"15920",
+		"GameTitle":"Monster Madness: Battle for Suburbia",
+		"ReleaseDate":"06/12/2007",
+		"Platform":"PC"
+	},
+	{
+		"id":"15921",
+		"GameTitle":"Monster Madness: Battle for Suburbia",
+		"ReleaseDate":"06/12/2007",
+		"Platform":"Microsoft Xbox 360"
+	},
+	{
+		"id":"18176",
+		"GameTitle":"Cabela's Big Game Hunter 2012",
+		"ReleaseDate":"09/27/2011",
+		"Platform":"Nintendo Wii"
+	},
+	{
+		"id":"20344",
+		"GameTitle":"Mamono Hunter Youko - Dai 7 no Keishou",
+		"ReleaseDate":"03/22/1991",
+		"Platform":"Sega Mega Drive"
+	},
+	{
+		"id":"21261",
+		"GameTitle":"Cabela's Big Game Hunter: Pro Hunts",
+		"ReleaseDate":"03/25/2014",
+		"Platform":"PC"
+	},
+	{
+		"id":"21836",
+		"GameTitle":"Godzilla the Series: Monster Wars",
+		"ReleaseDate":"11/20/2000",
+		"Platform":"Nintendo Game Boy Color"
+	},
+	{
+		"id":"22066",
+		"GameTitle":"Rocky Mountain: Trophy Hunter",
+		"ReleaseDate":"09/06/2000",
+		"Platform":"Nintendo Game Boy Color"
+	},
+	{
+		"id":"5911",
+		"GameTitle":"Cabela's Big Game Hunter 2005 Adventures",
+		"ReleaseDate":"09/06/2004",
+		"Platform":"Sony Playstation 2"
+	},
+	{
+		"id":"6949",
+		"GameTitle":"Cabela's Big Game Hunter 2005 Adventures",
+		"ReleaseDate":"12/09/2004",
+		"Platform":"Nintendo GameCube"
+	},
+	{
+		"id":"16064",
+		"GameTitle":"Uncharted 2: Among Thieves Fortune Hunter Edition",
+		"ReleaseDate":"10/01/2009",
+		"Platform":"Sony Playstation 3"
+	},
+	{
+		"id":"20890",
+		"GameTitle":"Cabela's Big Game Hunter: Hunting Party",
+		"ReleaseDate":"11/01/2011",
+		"Platform":"Microsoft Xbox 360"
+	},
+	{
+		"id":"14836",
+		"GameTitle":"Jake Hunter: Detective Story - Memories of the Past",
+		"ReleaseDate":"05/26/2009",
+		"Platform":"Nintendo DS"
+	},
+	{
+		"id":"22034",
+		"GameTitle":"Midway Presents Arcade Hits: Moon Patrol / Spy Hunter",
+		"ReleaseDate":"05/01/1999",
+		"Platform":"Nintendo Game Boy Color"
+	}
+]

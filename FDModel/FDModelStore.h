@@ -18,6 +18,14 @@ FDArchivedFileModelStore is a library-defined concrete subclass of FDModelStore.
 @interface FDModelStore : NSObject
 
 
+#pragma mark - Properties
+
+/**
+A recursive lock to be used by concrete subclasses to ensure only a single thread is using the model store at a time.
+*/
+@property (nonatomic, readonly) NSRecursiveLock *modificationLock;
+
+
 #pragma mark - Instance Methods
 
 /**

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2715C7B31A51409900220CC5 /* games.json in Resources */ = {isa = PBXBuildFile; fileRef = 2715C7B21A51409900220CC5 /* games.json */; };
 		279523F519C6A51A00E64078 /* FDGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 279523F419C6A51A00E64078 /* FDGame.m */; };
 		27A24B9B19C3C4AE00BA5D33 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A24B9A19C3C4AE00BA5D33 /* main.m */; };
 		27A24BA019C3C4AE00BA5D33 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27A24B9F19C3C4AE00BA5D33 /* Images.xcassets */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2715C7B21A51409900220CC5 /* games.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = games.json; sourceTree = "<group>"; };
 		279523E619C6A4B300E64078 /* FDModel.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FDModel.xcodeproj; path = "../../Framework Project/FDModel.xcodeproj"; sourceTree = "<group>"; };
 		279523F319C6A51A00E64078 /* FDGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDGame.h; sourceTree = "<group>"; };
 		279523F419C6A51A00E64078 /* FDGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDGame.m; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				27A24B9F19C3C4AE00BA5D33 /* Images.xcassets */,
+				2715C7B21A51409900220CC5 /* games.json */,
 				27A24BA119C3C4AE00BA5D33 /* InfoPlist.strings */,
 				27A24BA319C3C4AE00BA5D33 /* Credits.rtf */,
 			);
@@ -251,6 +254,7 @@
 			files = (
 				27A24BA019C3C4AE00BA5D33 /* Images.xcassets in Resources */,
 				27A24BA419C3C4AE00BA5D33 /* Credits.rtf in Resources */,
+				2715C7B31A51409900220CC5 /* games.json in Resources */,
 				27A24BA219C3C4AE00BA5D33 /* InfoPlist.strings in Resources */,
 				27A24BA719C3C4AE00BA5D33 /* MainMenu.xib in Resources */,
 			);

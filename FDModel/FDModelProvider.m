@@ -52,6 +52,7 @@ static FDModelProvider *_sharedInstance;
 	}
 	
 	// Initialize instance variables.
+	_modificationLock = [FDModel modificationLock];
 	
 	// Return initialized instance.
 	return self;
@@ -84,6 +85,8 @@ static FDModelProvider *_sharedInstance;
 	parentRemoteKeypath: (NSString *)parentRemoteKeyPath 
 	modelClassBlock: (FDModelProviderModelClassBlock)modelClassBlock
 {
+	[_modificationLock lock];
+	
 	// Ensure the parent model class is a subclass of FDModel.
 	if (parentModelClass != nil 
 		&& [parentModelClass isSubclassOfClass: [FDModel class]] == NO)
@@ -91,6 +94,8 @@ static FDModelProvider *_sharedInstance;
 		[NSException raise: NSInvalidArgumentException 
 			format: @"The parentModelClass parameter on %@ must be a subclass of FDModel", 
 				NSStringFromSelector(_cmd)];
+		
+		[_modificationLock unlock];
 		
 		return object;
 	}
@@ -112,6 +117,8 @@ static FDModelProvider *_sharedInstance;
 					[array addObject: transformedObject];
 				}
 			}];
+		
+		[_modificationLock unlock];
 		
 		return array;
 	}
@@ -136,6 +143,8 @@ static FDModelProvider *_sharedInstance;
 		// If the model class is NSNull ignore the dictionary entirely.
 		if (modelClass == [NSNull class])
 		{
+			[_modificationLock unlock];
+			
 			return nil;
 		}
 		
@@ -155,6 +164,8 @@ static FDModelProvider *_sharedInstance;
 						forKey: key];
 				}];
 			
+			[_modificationLock unlock];
+			
 			return dictionary;
 		}
 		// If the model class block returned a model class populate an instance of it.
@@ -166,6 +177,7 @@ static FDModelProvider *_sharedInstance;
 				[NSException raise: NSInternalInconsistencyException 
 					format: @"The model class for the following dictionary is not a subclass of FDModel:\n%@", 
 						object];
+				[_modificationLock unlock];
 				
 				return object;
 			}
@@ -349,7 +361,9 @@ static FDModelProvider *_sharedInstance;
 #if DEBUG
 			[model modelDidFinishParsingRemoteObject: object];
 #endif
-
+			
+			[_modificationLock unlock];
+			
 			return model;
 		}
 	}
@@ -365,11 +379,15 @@ static FDModelProvider *_sharedInstance;
 		// If the model class is NSNull return nothing.
 		if (modelClass == [NSNull class])
 		{
+			[_modificationLock unlock];
+			
 			return nil;
 		}
 		// If the model class is nil return the string.
 		else if (modelClass == nil)
 		{
+			[_modificationLock unlock];
+			
 			return object;
 		}
 		
@@ -380,19 +398,27 @@ static FDModelProvider *_sharedInstance;
 				format: @"The model class for '%@' is not a subclass of FDModel.", 
 					object];
 			
+			[_modificationLock unlock];
+			
 			return object;
 		}
 		
 		// Load the instance of the model for the string if it exists. Otherwise create a blank instance of the model.
 		id transformedObject = [modelClass modelWithIdentifier: object];
 		
+		[_modificationLock unlock];
+		
 		return transformedObject;
 	}
 	// If the object is a NSNull replace it with nil to prevent the inevitable crash caused by NSNull getting sent a message.
 	else if (object == [NSNull null])
 	{
+		[_modificationLock unlock];
+		
 		return nil;
 	}
+	
+	[_modificationLock unlock];
 	
 	// Return the object if it could not be transformed.
 	return object;

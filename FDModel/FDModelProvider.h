@@ -40,7 +40,12 @@ Because the vast majority of FDModels being parsed in an application will occur 
 #pragma mark - Properties
 
 /**
-The data formatter to use whenever the model provider is attempting to set an instance of NSString on a property whose type is NSDate.
+A recursive lock to ensure that the model provider is only used by a single thread at a time.
+*/
+@property (nonatomic, readonly) NSRecursiveLock *modificationLock;
+
+/**
+The date formatter to use whenever the model provider is attempting to set an instance of NSString on a property whose type is NSDate.
 */
 @property (nonatomic, strong) NSDateFormatter *dateFormatter;
 

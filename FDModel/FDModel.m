@@ -6,6 +6,7 @@
 
 #pragma mark Class Variables
 
+static NSRecursiveLock *_modificationLock;
 static FDModelStore *_modelStore;
 static FDThreadSafeMutableDictionary *_existingModelsByClass;
 
@@ -27,6 +28,7 @@ static FDThreadSafeMutableDictionary *_existingModelsByClass;
 	// If this class has not been initialized then initalize the class variables.
 	if (classInitialized == NO)
 	{
+		_modificationLock = [NSRecursiveLock new];
 		_modelStore = [FDArchivedFileModelStore new];
 		_existingModelsByClass = [FDThreadSafeMutableDictionary new];
 		
@@ -72,63 +74,65 @@ static FDThreadSafeMutableDictionary *_existingModelsByClass;
 	// If an identifier has been passed in check if an instance of the class with the identifier already exists.
 	if (FDIsEmpty(identifier) == NO)
 	{
-		// Because models can be created on any thread this code needs to be synchronized on the class being created to ensure that two threads can't create the same object at the same time.
-		@synchronized ([self class])
+		// Because models can be created (and subsequently customized) on any thread the modification lock must be acquired to ensure that multiple threads cannot create the same object at the same time.
+		[_modificationLock lock];
+		
+		NSString *modelClassAsString = NSStringFromClass([self class]);
+		
+		// Load the dictionary of all the existings models for the class. If the dictionary does not yet exist create it.
+		FDCache *existingModels = [_existingModelsByClass objectForKey: modelClassAsString];
+		if (existingModels == nil)
 		{
-			NSString *modelClassAsString = NSStringFromClass([self class]);
-			
-			// Load the dictionary of all the existings models for the class. If the dictionary does not yet exist create it.
-			FDCache *existingModels = [_existingModelsByClass objectForKey: modelClassAsString];
-			if (existingModels == nil)
+			existingModels = [FDCache new];
+			[_existingModelsByClass setValue: existingModels 
+				forKey: modelClassAsString];
+		}
+		
+		// Load the existing model for the identifier.
+		FDModel *model = [existingModels objectForKey: identifier];
+		
+		// If the model does not exist call the init block.
+		if (model == nil)
+		{
+			if (initBlock != nil)
 			{
-				existingModels = [FDCache new];
-				[_existingModelsByClass setValue: existingModels 
-					forKey: modelClassAsString];
+				model = initBlock(identifier);
 			}
 			
-			// Load the existing model for the identifier.
-			FDModel *model = [existingModels objectForKey: identifier];
-			
-			// If the model does not exist call the init block.
+			// If the model still does not exist after the init block create a blank instance of the model.
 			if (model == nil)
 			{
-				if (initBlock != nil)
+				if ((self = [super init]) == nil)
 				{
-					model = initBlock(identifier);
+					return nil;
 				}
-				
-				// If the model still does not exist after the init block create a blank instance of the model.
-				if (model == nil)
-				{
-					if ((self = [super init]) == nil)
-					{
-						return nil;
-					}
-				}
-				else
-				{
-					self = model;
-				}
-				
-				// Ensure the identifier is set on the model.
-				_identifier = identifier;
-				
-				// Because the model was just created call the customization block.
-				if (customizationBlock != nil)
-				{
-					customizationBlock(self);
-				}
-				
-				// Store the model in the existing models dictionary to ensure that only one instance of the model will ever exist.
-				[existingModels setObject: self 
-					forKey: identifier];
 			}
-			// If the model already exists assign it to self.
 			else
 			{
 				self = model;
 			}
+			
+			// Ensure the identifier is set on the model.
+			_identifier = identifier;
+			
+			// Because the model was just created call the customization block.
+			if (customizationBlock != nil)
+			{
+				customizationBlock(self);
+			}
+			
+			// Store the model in the existing models dictionary to ensure that only one instance of the model will ever exist.
+			[existingModels setObject: self 
+				forKey: identifier];
 		}
+		// If the model already exists assign it to self.
+		else
+		{
+			self = model;
+		}
+		
+		// After the model has been created, customized and tracked release the modification lock.
+		[_modificationLock unlock];
 	}
 	// If there is no identifier create a blank instance of the model.
 	else if ((self = [super init]) == nil)
@@ -218,6 +222,11 @@ static FDThreadSafeMutableDictionary *_existingModelsByClass;
 	return nil;
 }
 
++ (NSRecursiveLock *)modificationLock
+{
+	return _modificationLock;
+}
+
 + (void)setModelStore: (FDModelStore *)modelStore
 {
 	_modelStore = modelStore;
@@ -225,17 +234,13 @@ static FDThreadSafeMutableDictionary *_existingModelsByClass;
 
 + (instancetype)existingModelWithIdentifier: (id)identifier
 {
-	// Because models can be created on any thread this code needs to be synchronized on the class being created to ensure that if a model with the identifer is in the process of being created this method will return that model object.
-	@synchronized ([self class])
-	{
-		NSString *modelClassAsString = NSStringFromClass([self class]);
-		
-		FDCache *existingModels = [_existingModelsByClass objectForKey: modelClassAsString];
-		
-		FDModel *model = [existingModels objectForKey: identifier];
-		
-		return model;
-	}
+	NSString *modelClassAsString = NSStringFromClass([self class]);
+	
+	FDCache *existingModels = [_existingModelsByClass objectForKey: modelClassAsString];
+	
+	FDModel *model = [existingModels objectForKey: identifier];
+	
+	return model;
 }
 
 + (NSArray *)existingModels
@@ -268,6 +273,9 @@ static FDThreadSafeMutableDictionary *_existingModelsByClass;
 
 - (void)encodeWithCoder: (NSCoder *)coder
 {
+	// According to Apple an object should not be modified while it is being encoded (https://devforums.apple.com/message/1079522#1079522) so the modification lock must be acquired before proceeding.
+	[_modificationLock lock];
+	
 	// Iterate over each declared property and encode it.
 	NSArray *declaredProperties = [[self class] declaredPropertiesForSubclass: [FDModel class]];
 	for (FDDeclaredProperty *declaredProperty in declaredProperties)
@@ -284,6 +292,9 @@ static FDThreadSafeMutableDictionary *_existingModelsByClass;
 		[coder encodeObject: value 
 			forKey: key];
 	}
+	
+	// Once the object has finished encoding the modification lock can be released.
+	[_modificationLock unlock];
 }
 
 - (id)initWithCoder: (NSCoder *)coder

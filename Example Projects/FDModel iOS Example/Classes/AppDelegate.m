@@ -1,5 +1,6 @@
 #import "AppDelegate.h"
 #import "FDGame.h"
+#import <FDModel/FDModelProvider.h>
 
 
 #pragma mark Class Definition
@@ -23,54 +24,46 @@
 	
 	_mainWindow.backgroundColor = [UIColor blackColor];
 	
-	// TODO: Create the root view controller for the main window.
+	// Load and parse the games.json file in an operation queue a large number of times to test multiple threads creating the same objects.
+	NSOperationQueue *operationQueue = [NSOperationQueue new];
 	
-	// Create a model object from a hardcoded JSON dictionary.
-	NSDictionary *simulatedJSON = @{ 
-		@"game_id" : @(22), 
-		@"name" : @"Monster Hunter 4 Ultimate", 
-		@"genre" : @"Action role-playing game", 
-		@"release_date" : @"10-11-2014"
-		};
+	for (int i=0; i < 100; i++)
+	{
+		[operationQueue addOperationWithBlock: ^
+			{
+				NSBundle *mainBundle = [NSBundle mainBundle];
+				NSURL *url = [mainBundle URLForResource: @"games" 
+					withExtension: @"json"];
+				NSData *data = [NSData dataWithContentsOfURL: url];
+				
+				id gamesJSON = [NSJSONSerialization JSONObjectWithData: data 
+					options: NSJSONReadingAllowFragments 
+					error: nil];
+				
+				FDModelProvider *modelProvider = [FDModelProvider sharedInstance];
+				[modelProvider parseObject: gamesJSON 
+					modelClassBlock: ^Class(NSString *parentKey, id value)
+						{
+							Class modelClass = nil;
+							if (parentKey == nil)
+							{
+								return [FDGame class];
+							}
+							
+							return modelClass;
+						}];
+				
+				NSLog(@"Finished %d", i);
+			}];
+	}
 	
-	FDGame *game = [FDGame modelWithDictionary: simulatedJSON];
-	NSLog(@"%@", game);
+	[operationQueue waitUntilAllOperationsAreFinished];
 	
 	// Show the main window.
 	[_mainWindow makeKeyAndVisible];
 	
 	// Indicate success.
 	return YES;
-}
-
-- (void)applicationWillResignActive: (UIApplication *)application
-{
-	// Pause ongoing tasks and disable timers.
-}
-
-- (void)applicationDidEnterBackground: (UIApplication *)application
-{
-	// Save application data, invalidate timers and store enough information to recover previous state if the application becomes active again.
-}
-
-- (void)applicationWillEnterForeground: (UIApplication *)application
-{
-	// Undo any changes that were made when the application entered the background.
-}
-
-- (void)applicationDidBecomeActive: (UIApplication *)application
-{
-	 // Restart tasks that were paused when the application resigned its active status.
-}
-
-- (void)applicationWillTerminate: (UIApplication *)application
-{
-	// Save application data and invalidate timers.
-}
-
-- (void)applicationDidReceiveMemoryWarning: (UIApplication *)application
-{
-	// Free up as much memory as possible by purging cached data or any other data that can be read back from disk.
 }
 
 

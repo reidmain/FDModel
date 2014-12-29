@@ -11,16 +11,40 @@
 
 - (void)applicationDidFinishLaunching: (NSNotification *)notification
 {
-	// Create a model object from a hardcoded JSON dictionary.
-	NSDictionary *simulatedJSON = @{ 
-		@"game_id" : @(22), 
-		@"name" : @"Monster Hunter 4 Ultimate", 
-		@"genre" : @"Action role-playing game", 
-		@"release_date" : @"10-11-2014"
-		};
+	// Load and parse the games.json file in an operation queue a large number of times to test multiple threads creating the same objects.
+	NSOperationQueue *operationQueue = [NSOperationQueue new];
 	
-	FDGame *game = [FDGame modelWithDictionary: simulatedJSON];
-	NSLog(@"%@", game);
+	for (int i=0; i < 100; i++)
+	{
+		[operationQueue addOperationWithBlock: ^
+			{
+				NSBundle *mainBundle = [NSBundle mainBundle];
+				NSURL *url = [mainBundle URLForResource: @"games" 
+					withExtension: @"json"];
+				NSData *data = [NSData dataWithContentsOfURL: url];
+				
+				id gamesJSON = [NSJSONSerialization JSONObjectWithData: data 
+					options: NSJSONReadingAllowFragments 
+					error: nil];
+				
+				FDModelProvider *modelProvider = [FDModelProvider sharedInstance];
+				NSArray *games = [modelProvider parseObject: gamesJSON 
+					modelClassBlock: ^Class(NSString *parentKey, id value)
+						{
+							Class modelClass = nil;
+							if (parentKey == nil)
+							{
+								return [FDGame class];
+							}
+							
+							return modelClass;
+						}];
+				
+				NSLog(@"Finished %d", i);
+			}];
+	}
+	
+	[operationQueue waitUntilAllOperationsAreFinished];
 }
 
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed: (NSApplication *)sender

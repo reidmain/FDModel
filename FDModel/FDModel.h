@@ -152,6 +152,11 @@ The method behaves almost identically to FDDataClientModelClassBlock whereas the
 	withRemoteKeyPath: (NSString *)remoteKeyPath;
 
 /**
+Returns the recursive lock that is used to ensure the creation, modification and encoding of FDModel objects can only occur on a single thread at any given time.
+*/
++ (NSRecursiveLock *)modificationLock;
+
+/**
 Sets the model store that will be used to back all FDModels.
 
 By default FDModel uses FDArchivedFileModelStore.

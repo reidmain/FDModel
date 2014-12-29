@@ -26,7 +26,11 @@
 	NSString *modelFilePath = [self _modelFilePathForIdentifier: identifier];
 	if (modelFilePath != nil)
 	{
+		[self.modificationLock lock];
+		
 		model = [NSKeyedUnarchiver unarchiveObjectWithFile: modelFilePath];
+		
+		[self.modificationLock unlock];
 	}
 
 	return model;
@@ -36,8 +40,12 @@
 {
 	NSString *modelFilePath = [self _modelFilePathForIdentifier: model.identifier];
 	
+	[self.modificationLock lock];
+	
 	BOOL saveSuccessful = [NSKeyedArchiver archiveRootObject: model 
 		toFile: modelFilePath];
+	
+	[self.modificationLock unlock];
 	
 	return saveSuccessful;
 }
@@ -46,9 +54,13 @@
 {
 	NSString *modelFilePath = [self _modelFilePathForIdentifier: model.identifier];
 	
+	[self.modificationLock lock];
+	
 	NSFileManager *defaultFileManager = [NSFileManager defaultManager];
 	BOOL deleteSuccessful = [defaultFileManager removeItemAtPath: modelFilePath 
 		error: nil];
+	
+	[self.modificationLock unlock];
 	
 	return deleteSuccessful;
 }
