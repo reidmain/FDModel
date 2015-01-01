@@ -185,16 +185,32 @@ Returns a new array containing all of the instances of the model that FDModel is
 /**
 Attempts to save the model to the model store.
 
+This method uses the modification lock so it could take a long amount of time to complete and therefore should never be called on the UI thread.
+
 @return Returns YES if the model was successfully saved to the model store otherwise NO.
+
+@see saveAsynchronously
 */
 - (BOOL)save;
 
 /**
+Attempts to save the model to the model store in a background thread.
+*/
+- (void)saveAsynchronously;
+
+/**
 Attempts to delete the model from the model store.
 
-@return Returns YES if the model was successfully saved to the model store otherwise NO.
+This method uses the modification lock so it could take a long amount of time to complete and therefore should never be called on the UI thread.
+
+@return Returns YES if the model was successfully deleted from the model store otherwise NO.
 */
 - (BOOL)delete;
+
+/**
+Attempts to delete the model from the model store in a background thread.
+*/
+- (void)deleteAsynchronously;
 
 
 #pragma mark - Debug Methods

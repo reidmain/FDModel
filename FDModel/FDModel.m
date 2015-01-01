@@ -261,11 +261,27 @@ static FDThreadSafeMutableDictionary *_existingModelsByClass;
 	return saveSuccessful;
 }
 
+- (void)saveAsynchronously
+{
+	[self performBlockInBackground: ^
+		{
+			[self save];
+		}];
+}
+
 - (BOOL)delete
 {
 	BOOL deleteSuccessful = [_modelStore deleteModel: self];
 	
 	return deleteSuccessful;
+}
+
+- (void)deleteAsynchronously
+{
+	[self performBlockInBackground: ^
+		{
+			[self delete];
+		}];
 }
 
 
