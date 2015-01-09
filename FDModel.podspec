@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name = "FDModel"
-  s.version = "1.1.0"
+  s.version = "1.2.0"
   s.summary = "Pain free model layer by 1414 Degrees."
   s.license = { :type => "MIT", :file => "LICENSE.md" }
 
