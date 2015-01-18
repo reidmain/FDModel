@@ -248,7 +248,8 @@ static FDModelProvider *_sharedInstance;
 								}
 								
 								// Ensure the model class is a subclass of FDModel.
-								if ([modelClass isSubclassOfClass: [FDModel class]] == NO)
+								if (modelClass != nil 
+									&& [modelClass isSubclassOfClass: [FDModel class]] == NO)
 								{
 									[NSException raise: NSInternalInconsistencyException 
 										format: @"The model class for '%@' is not a subclass of FDModel.", 
