@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name = "FDModel"
-  s.version = "1.2.0"
+  s.version = "1.2.1"
   s.summary = "Pain free model layer by 1414 Degrees."
   s.license = { :type => "MIT", :file => "LICENSE.md" }
 
@@ -15,5 +15,5 @@ Pod::Spec.new do |s|
   s.source_files = "FDModel/**/*.{h,m}"
   s.framework  = "Foundation"
   s.requires_arc = true
-  s.dependency "FDFoundationKit"
+  s.dependency "FDFoundationKit", "~> 1.2"
 end
