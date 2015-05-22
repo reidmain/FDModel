@@ -158,7 +158,8 @@ static FDThreadSafeMutableDictionary *_existingModelsByClass;
 		initBlock: ^FDModel *(id identifier)
 			{
 				// If the model does not exist in memory check the model store.
-				FDModel *model = [_modelStore modelForIdentifier: identifier];
+				FDModel *model = [_modelStore modelForIdentifier: identifier 
+					withClass: [self class]];
 				
 				return model;
 			} 

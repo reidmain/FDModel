@@ -27,7 +27,8 @@
 
 #pragma mark - Public Methods
 
-- (FDModel *)modelForIdentifier: (id)identifier
+- (FDModel *)modelForIdentifier: (id)identifier 
+	withClass: (Class)modelClass
 {
 	return nil;
 }

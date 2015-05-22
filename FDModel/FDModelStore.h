@@ -31,16 +31,18 @@ A recursive lock to be used by concrete subclasses to ensure only a single threa
 /**
 Attempts to retrieve a model from the model store with the specified identifier.
 
-@param The identifier of the model being queried.
+@param identifier The identifier of the model being queried.
+@param modelClass The class of the model to be retrieved.
 
 @return Returns the model if it exists otherwise nil.
 */
-- (FDModel *)modelForIdentifier: (id)identifier;
+- (FDModel *)modelForIdentifier: (id)identifier 
+	withClass: (Class)modelClass;
 
 /**
 Attempts to save the model to the model store.
 
-@param The model to save to the model store.
+@param model The model to save to the model store.
 
 @return Returns YES if the model was successfully saved to the model store otherwise NO.
 */
@@ -49,7 +51,7 @@ Attempts to save the model to the model store.
 /**
 Attempts to delete the model from the model store.
 
-@param The model to delete from the model store.
+@param model The model to delete from the model store.
 
 @return Returns YES if the model was successfully deleted from the model store otherwise NO.
 */

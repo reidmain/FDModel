@@ -60,7 +60,7 @@ By default all FDModel objects are pesisted only in-memory. Model objects can be
 /**
 Creates or loads a model with the specified identifier.
 
-@param The identifier of the model being created.
+@param identifier The identifier of the model being created.
 
 @see initWithIdentifier:initBlock:customizationBlock:
 */
@@ -71,7 +71,7 @@ Creates or loads a model with the specified dictionary.
 
 This method uses the shared FDModelProvider instance to attempt to transform the dictionary into an instance of the class this method is called on.
 
-@param The dictionary the model is being created from.
+@param dictionary The dictionary the model is being created from.
 */
 + (instancetype)modelWithDictionary: (NSDictionary *)dictionary;
 
@@ -84,7 +84,7 @@ If an instance of the model with the specified identifier already exists in memo
 
 If the model does not exist in memory the initBlock will be called. If the initBlock returns a model it will be used otherwise the object this method was called on will be initialized. Finally the model will then be passed onto the customizationBlock.
 
-@param The identifier of the model being initialized.
+@param identifier The identifier of the model being initialized.
 @param initBlock The block to call if a model with the specified identifier does not exist in memory. This parameter may be nil.
 @param customizationBlock The block to call on the model after the initBlock has been called. This block should be used to set the defaults of any properties of the model. This parameter may be nil.
 
@@ -99,7 +99,7 @@ Returns an initialized model with the specified identifier.
 
 This initializer may not return the same object that it was called on if a model with the specified identifier already exists in the model store.
 
-@param The identifier of the model being initialized.
+@param identifier The identifier of the model being initialized.
 
 @see initWithIdentifier:initBlock:customizationBlock:
 */
@@ -168,7 +168,7 @@ By default FDModel uses FDArchivedFileModelStore.
 /**
 Queries the existing instances of this model for an instance with the specified identifier.
 
-@param The identifier with which to query for an existing instance.
+@param identifier The identifier with which to query for an existing instance.
 
 @return Returns either an instance of the model with the specified identifier, or nil if no instance with the identifier exists.
 */
