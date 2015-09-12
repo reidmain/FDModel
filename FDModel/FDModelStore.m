@@ -1,8 +1,9 @@
 #import "FDModelStore.h"
+
 #import "FDModel.h"
 
 
-#pragma mark Class Definition
+#pragma mark - Class Definition
 
 @implementation FDModelStore
 

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:README.md">
+   </FileRef>
+   <FileRef
+      location = "group:FDModel.podspec">
+   </FileRef>
+   <FileRef
+      location = "container:Framework Project/FDModel.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Example Projects/FDModel iOS Example.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Example Projects/FDModel Mac Example.xcodeproj">
+   </FileRef>
+</Workspace>

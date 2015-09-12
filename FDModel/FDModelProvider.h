@@ -1,7 +1,7 @@
 #import "FDModel.h"
 
 
-#pragma mark Type Definitions
+#pragma mark - Type Definitions
 
 /**
 This block is used to determine which FDModel subclass an object should be parsed into.

@@ -1,8 +1,9 @@
 #import "FDModelProvider.h"
-#import <FDFoundationKit/FDFoundationKit.h>
+
+@import FDFoundationKit;
 
 
-#pragma mark Class Extension
+#pragma mark - Class Extension
 
 @interface FDModelProvider ()
 
@@ -213,7 +214,7 @@ static FDModelProvider *_sharedInstance;
 					}
 					
 					// Get the property info on the property that is about to be set.
-					FDDeclaredProperty *declaredProperty = [modelClass declaredPropertyForKeyPath: localKeyPath];
+					FDDeclaredProperty *declaredProperty = [modelClass fd_declaredPropertyForKeyPath: localKeyPath];
 					
 					id transformedObject = nil;
 					
@@ -230,7 +231,7 @@ static FDModelProvider *_sharedInstance;
 						else
 						{
 							// If the property being set is of type FDModel and the remote object is a NSString or NSValue it is possible that the string is the unique identifier for the model. Check and see if an instance of model class with that identifier exists.
-							if ([declaredProperty.type isSubclassOfClass: [FDModel class]] == YES 
+							if ([declaredProperty.objectClass isSubclassOfClass: [FDModel class]] == YES 
 								&& ([remoteObject isKindOfClass: [NSString class]] == YES 
 									|| [remoteObject isKindOfClass: [NSValue class]] == YES))
 							{
@@ -261,13 +262,13 @@ static FDModelProvider *_sharedInstance;
 								// If the model class is still nil use the declared property type.
 								if (modelClass == nil)
 								{
-									modelClass = declaredProperty.type;
+									modelClass = declaredProperty.objectClass;
 								}
 								
 								transformedObject = [modelClass modelWithIdentifier: remoteObject];
 							}
 							// If the property being set is of type FDModel and the remote object is a NSDictionary attempt to transform the dictionary into an instance of the FDModel class.
-							else if ([declaredProperty.type isSubclassOfClass: [FDModel class]] == YES 
+							else if ([declaredProperty.objectClass isSubclassOfClass: [FDModel class]] == YES 
 								&& [remoteObject isKindOfClass: [NSDictionary class]] == YES)
 							{
 								transformedObject = [self _parseObject: remoteObject 
@@ -280,41 +281,41 @@ static FDModelProvider *_sharedInstance;
 											if (parentKey == remoteKeyPath 
 												&& modelClass == nil)
 											{
-												modelClass = declaredProperty.type;
+												modelClass = declaredProperty.objectClass;
 											}
 											
 											return modelClass;
 										} ];
 							}
 							// If the property being set is a NSURL and the remote object is a NSString convert the string to a NSURL object.
-							else if ([declaredProperty.type isSubclassOfClass: [NSURL class]] == YES 
+							else if ([declaredProperty.objectClass isSubclassOfClass: [NSURL class]] == YES 
 								&& [remoteObject isKindOfClass: [NSString class]] == YES)
 							{
 								transformedObject = [NSURL URLWithString: remoteObject];
 							}
 							// If the property being set is a NSDate and the remote object is a NSString attempt to convert the string to a NSDate using the date formatter.
-							else if ([declaredProperty.type isSubclassOfClass: [NSDate class]] == YES 
+							else if ([declaredProperty.objectClass isSubclassOfClass: [NSDate class]] == YES 
 								&& [remoteObject isKindOfClass: [NSString class]] == YES)
 							{
 								transformedObject = [_dateFormatter dateFromString: remoteObject];
 							}
 							// If the property being set is a NSString and the remote object is a NSNumber convert the number to a string.
-							else if ([declaredProperty.type isSubclassOfClass: [NSString class]] == YES 
+							else if ([declaredProperty.objectClass isSubclassOfClass: [NSString class]] == YES 
 								&& [remoteObject isKindOfClass: [NSNumber class]] == YES)
 							{
 								transformedObject = [remoteObject stringValue];
 							}
 							// If the property being set is a NSNumber and the remote object is a NSString convert the string to a number.
-							else if ([declaredProperty.type isSubclassOfClass: [NSNumber class]] == YES
+							else if ([declaredProperty.objectClass isSubclassOfClass: [NSNumber class]] == YES
 								&& [remoteObject isKindOfClass: [NSString class]] == YES)
 							{
 								double value = [remoteObject doubleValue];
 								transformedObject = @(value);
 							}
 							// If the remote object is a collection object and is the same type as the property type being set attempt to transformation the collection into local models.
-							else if ([remoteObject isKindOfClass: declaredProperty.type] == YES 
-								&& ([declaredProperty.type isSubclassOfClass: [NSArray class]] == YES 
-									|| [declaredProperty.type isSubclassOfClass: [NSDictionary class]] == YES))
+							else if ([remoteObject isKindOfClass: declaredProperty.objectClass] == YES 
+								&& ([declaredProperty.objectClass isSubclassOfClass: [NSArray class]] == YES 
+									|| [declaredProperty.objectClass isSubclassOfClass: [NSDictionary class]] == YES))
 							{
 								transformedObject = [self _parseObject: remoteObject 
 									parentModelClass: modelClass 
@@ -335,14 +336,14 @@ static FDModelProvider *_sharedInstance;
 					
 					// If the transformed object is not the same type as the property that is being set stop parsing and move onto the next item because there is no point in attempting to set it since it will always result in nil.
 					if (transformedObject != nil 
-						&& declaredProperty.type != nil 
-						&& [transformedObject isKindOfClass: declaredProperty.type] == NO)
+						&& declaredProperty.objectClass != nil 
+						&& [transformedObject isKindOfClass: declaredProperty.objectClass] == NO)
 					{
 						return;
 					}
 					// If the transformed object is nil and the declared property is a scalar type do not bother trying to set it because it will only result in an exception.
 					else if (transformedObject == nil 
-						&& declaredProperty.type == nil)
+						&& declaredProperty.objectClass == nil)
 					{
 						return;
 					}

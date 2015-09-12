@@ -7,3 +7,5 @@
 # Xcode
 project.xcworkspace/
 xcuserdata/
+*.xccheckout
+*.xcscmblueprint

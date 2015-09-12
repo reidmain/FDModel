@@ -1,6 +1,8 @@
 #import "FDArchivedFileModelStore.h"
+
+@import FDFoundationKit;
+
 #import "FDModel.h"
-#import <FDFoundationKit/FDFoundationKit.h>
 
 
 #pragma mark Class Extension
@@ -100,7 +102,7 @@
 		identifier];
 	
 	// Hash the full identifier to ensure there are no / in the file name.
-	NSString *hashedIdentifier = [fullIdentifier sha256HashString];
+	NSString *hashedIdentifier = [fullIdentifier fd_sha256HashString];
 	
 	// Create the file name for the model from the hash and append it to the cache directory path.
 	NSString *modelFileName = [NSString stringWithFormat: @"%@.plist", 

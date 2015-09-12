@@ -1,7 +1,10 @@
-#import <FDFoundationKit/FDFoundationKit.h>
+@import Foundation;
+
+@import FDFoundationKit;
+
+#import "FDArchivedFileModelStore.h"
 #import "FDModelProvider.h"
 #import "FDModelStore.h"
-#import "FDArchivedFileModelStore.h"
 
 
 #ifndef LOG_MISSING_EXPECTED_REMOTE_KEYS
@@ -17,7 +20,7 @@
 #endif
 
 
-#pragma mark Type Definitions
+#pragma mark - Type Definitions
 
 /**
 @param identifier The identifier of the model to create.
@@ -55,7 +58,7 @@ By default all FDModel objects are pesisted only in-memory. Model objects can be
 @property (nonatomic, readonly) id identifier;
 
 
-#pragma mark - Constructors
+#pragma mark - Initializers
 
 /**
 Creates or loads a model with the specified identifier.

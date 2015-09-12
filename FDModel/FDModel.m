@@ -1,10 +1,7 @@
 #import "FDModel.h"
-#import "FDModelProvider.h"
-#import "FDArchivedFileModelStore.h"
-#import <FDFoundationKit/FDFoundationKit.h>
 
 
-#pragma mark Class Variables
+#pragma mark - Class Variables
 
 static NSRecursiveLock *_modificationLock;
 static FDModelStore *_modelStore;
@@ -264,7 +261,7 @@ static FDThreadSafeMutableDictionary *_existingModelsByClass;
 
 - (void)saveAsynchronously
 {
-	[self performBlockInBackground: ^
+	[self fd_performBlockInBackground: ^
 		{
 			[self save];
 		}];
@@ -279,7 +276,7 @@ static FDThreadSafeMutableDictionary *_existingModelsByClass;
 
 - (void)deleteAsynchronously
 {
-	[self performBlockInBackground: ^
+	[self fd_performBlockInBackground: ^
 		{
 			[self delete];
 		}];
@@ -294,11 +291,11 @@ static FDThreadSafeMutableDictionary *_existingModelsByClass;
 	[_modificationLock lock];
 	
 	// Iterate over each declared property and encode it.
-	NSArray *declaredProperties = [[self class] declaredPropertiesForSubclass: [FDModel class]];
+	NSArray *declaredProperties = [[self class] fd_declaredPropertiesUntilSuperclass: [FDModel class]];
 	for (FDDeclaredProperty *declaredProperty in declaredProperties)
 	{
 		// If the property being encoded is a read-only property with no backing instance variable it is indicative of a computed property which will always throw an exception when setValue:forKey: is called on it so there is no need to encode this information because it will never be set.
-		if (declaredProperty.isReadonly == YES 
+		if (declaredProperty.isReadOnly == YES 
 			&& declaredProperty.backingInstanceVariableName == nil)
 		{
 			continue;
@@ -324,11 +321,11 @@ static FDThreadSafeMutableDictionary *_existingModelsByClass;
 		customizationBlock: ^(FDModel *model)
 			{
 				// Iterate over each declared property and attempt to decode it and set it on the model.
-				NSArray *declaredProperties = [[model class] declaredPropertiesForSubclass: [FDModel class]];
+				NSArray *declaredProperties = [[model class] fd_declaredPropertiesUntilSuperclass: [FDModel class]];
 				for (FDDeclaredProperty *declaredProperty in declaredProperties)
 				{
 					// If the property being set is a read-only property with no backing instance variable setValue:forKey: will always throw an exception so ignore the property. This is indicative of a computed property so it does not need to be set anyway.
-					if (declaredProperty.isReadonly == YES 
+					if (declaredProperty.isReadOnly == YES 
 						&& declaredProperty.backingInstanceVariableName == nil)
 					{
 						continue;
@@ -377,11 +374,11 @@ static FDThreadSafeMutableDictionary *_existingModelsByClass;
 	FDModel *model = [[self class] new];
 	
 	// Iterate over each declared property and attempt to set it on the model.
-	NSArray *declaredProperties = [[model class] declaredPropertiesForSubclass: [FDModel class]];
+	NSArray *declaredProperties = [[model class] fd_declaredPropertiesUntilSuperclass: [FDModel class]];
 	for (FDDeclaredProperty *declaredProperty in declaredProperties)
 	{
 		// If the property being set is a read-only property with no backing instance variable setValue:forKey: will always throw an exception so ignore the property. This is indicative of a computed property so it does not need to be set anyway.
-		if (declaredProperty.isReadonly == YES 
+		if (declaredProperty.isReadOnly == YES 
 			&& declaredProperty.backingInstanceVariableName == nil)
 		{
 			continue;
@@ -440,7 +437,7 @@ static FDThreadSafeMutableDictionary *_existingModelsByClass;
 		isEqual = YES;
 		
 		// Iterate over each declared property check if they are equal.
-		NSArray *declaredProperties = [[self class] declaredPropertiesForSubclass: [FDModel class]];
+		NSArray *declaredProperties = [[self class] fd_declaredPropertiesUntilSuperclass: [FDModel class]];
 		for (FDDeclaredProperty *declaredProperty in declaredProperties)
 		{
 			NSString *key = declaredProperty.name;
