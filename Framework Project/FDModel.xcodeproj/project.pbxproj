@@ -31,6 +31,10 @@
 		27843DA21BA3E5C900A0D473 /* FDModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 27FCAA1719C3C534000BA7F1 /* FDModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		27843DA31BA3E5C900A0D473 /* FDArchivedFileModelStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 27FCAA1519C3C534000BA7F1 /* FDArchivedFileModelStore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		27843DA41BA3E5C900A0D473 /* FDModelProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 27FCAA1919C3C534000BA7F1 /* FDModelProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		27843DB91BA3E6D100A0D473 /* FDModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27759C6A19C69E98008D9F3E /* FDModel.framework */; settings = {ASSET_TAGS = (); }; };
+		27843DC81BA3E6DA00A0D473 /* FDModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27759C6A19C69E98008D9F3E /* FDModel.framework */; settings = {ASSET_TAGS = (); }; };
+		27843DD21BA3E74600A0D473 /* FDModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27843DCF1BA3E74600A0D473 /* FDModelTests.m */; settings = {ASSET_TAGS = (); }; };
+		27843DD31BA3E74600A0D473 /* FDModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27843DCF1BA3E74600A0D473 /* FDModelTests.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +80,20 @@
 			remoteGlobalIDString = 27994A5E1BA2A5C700B40846;
 			remoteInfo = "FDFoundationKit watchOS";
 		};
+		27843DBA1BA3E6D100A0D473 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27A24B3719C3C47C00BA5D33 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 27759C6919C69E98008D9F3E;
+			remoteInfo = "FDModel iOS";
+		};
+		27843DC91BA3E6DA00A0D473 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27A24B3719C3C47C00BA5D33 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 27759C6919C69E98008D9F3E;
+			remoteInfo = "FDModel iOS";
+		};
 		27A8318A19C3C7C700D309B5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 27A8318419C3C7C700D309B5 /* FDFoundationKit.xcodeproj */;
@@ -99,6 +117,10 @@
 		27759CA019C69EF4008D9F3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27843DA91BA3E5C900A0D473 /* FDModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FDModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		27843DAE1BA3E61800A0D473 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27843DB41BA3E6D100A0D473 /* FDModel iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FDModel iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		27843DC31BA3E6DA00A0D473 /* FDModel OS X Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FDModel OS X Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		27843DCF1BA3E74600A0D473 /* FDModelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDModelTests.m; sourceTree = "<group>"; };
+		27843DD11BA3E74600A0D473 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27A8318419C3C7C700D309B5 /* FDFoundationKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FDFoundationKit.xcodeproj; path = "FDFoundationKit/Framework Project/FDFoundationKit.xcodeproj"; sourceTree = "<group>"; };
 		27FCAA1519C3C534000BA7F1 /* FDArchivedFileModelStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDArchivedFileModelStore.h; sourceTree = "<group>"; };
 		27FCAA1619C3C534000BA7F1 /* FDArchivedFileModelStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDArchivedFileModelStore.m; sourceTree = "<group>"; };
@@ -132,6 +154,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		27843DB11BA3E6D100A0D473 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27843DB91BA3E6D100A0D473 /* FDModel.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27843DC01BA3E6DA00A0D473 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27843DC81BA3E6DA00A0D473 /* FDModel.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -159,11 +197,37 @@
 			path = "watchOS Supporting Files";
 			sourceTree = "<group>";
 		};
+		27843DB51BA3E6D100A0D473 /* FDModel Tests */ = {
+			isa = PBXGroup;
+			children = (
+				27843DCE1BA3E74600A0D473 /* Classes */,
+				27843DD01BA3E74600A0D473 /* Supporting Files */,
+			);
+			path = "FDModel Tests";
+			sourceTree = "<group>";
+		};
+		27843DCE1BA3E74600A0D473 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				27843DCF1BA3E74600A0D473 /* FDModelTests.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		27843DD01BA3E74600A0D473 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				27843DD11BA3E74600A0D473 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		27A24B3619C3C47C00BA5D33 = {
 			isa = PBXGroup;
 			children = (
 				27A24B4119C3C47C00BA5D33 /* FDModel Framework */,
 				27A8318219C3C76400D309B5 /* Vendors */,
+				27843DB51BA3E6D100A0D473 /* FDModel Tests */,
 				27A24B4019C3C47C00BA5D33 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -174,6 +238,8 @@
 				27759C6A19C69E98008D9F3E /* FDModel.framework */,
 				27759C8919C69ECC008D9F3E /* FDModel.framework */,
 				27843DA91BA3E5C900A0D473 /* FDModel.framework */,
+				27843DB41BA3E6D100A0D473 /* FDModel iOS Tests.xctest */,
+				27843DC31BA3E6DA00A0D473 /* FDModel OS X Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -322,6 +388,42 @@
 			productReference = 27843DA91BA3E5C900A0D473 /* FDModel.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		27843DB31BA3E6D100A0D473 /* FDModel iOS Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27843DBC1BA3E6D100A0D473 /* Build configuration list for PBXNativeTarget "FDModel iOS Tests" */;
+			buildPhases = (
+				27843DB01BA3E6D100A0D473 /* Sources */,
+				27843DB11BA3E6D100A0D473 /* Frameworks */,
+				27843DB21BA3E6D100A0D473 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				27843DBB1BA3E6D100A0D473 /* PBXTargetDependency */,
+			);
+			name = "FDModel iOS Tests";
+			productName = "FDModel iOS Tests";
+			productReference = 27843DB41BA3E6D100A0D473 /* FDModel iOS Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		27843DC21BA3E6DA00A0D473 /* FDModel OS X Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27843DCB1BA3E6DA00A0D473 /* Build configuration list for PBXNativeTarget "FDModel OS X Tests" */;
+			buildPhases = (
+				27843DBF1BA3E6DA00A0D473 /* Sources */,
+				27843DC01BA3E6DA00A0D473 /* Frameworks */,
+				27843DC11BA3E6DA00A0D473 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				27843DCA1BA3E6DA00A0D473 /* PBXTargetDependency */,
+			);
+			name = "FDModel OS X Tests";
+			productName = "FDModel OS X Tests";
+			productReference = 27843DC31BA3E6DA00A0D473 /* FDModel OS X Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -336,6 +438,12 @@
 					};
 					27759C8819C69ECC008D9F3E = {
 						CreatedOnToolsVersion = 6.0;
+					};
+					27843DB31BA3E6D100A0D473 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					27843DC21BA3E6DA00A0D473 = {
+						CreatedOnToolsVersion = 7.0;
 					};
 				};
 			};
@@ -360,6 +468,8 @@
 				27759C6919C69E98008D9F3E /* FDModel iOS */,
 				27843D971BA3E5C900A0D473 /* FDModel watchOS */,
 				27759C8819C69ECC008D9F3E /* FDModel OS X */,
+				27843DB31BA3E6D100A0D473 /* FDModel iOS Tests */,
+				27843DC21BA3E6DA00A0D473 /* FDModel OS X Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -424,6 +534,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		27843DB21BA3E6D100A0D473 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27843DC11BA3E6DA00A0D473 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -460,6 +584,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		27843DB01BA3E6D100A0D473 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27843DD21BA3E74600A0D473 /* FDModelTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27843DBF1BA3E6DA00A0D473 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27843DD31BA3E74600A0D473 /* FDModelTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -477,6 +617,16 @@
 			isa = PBXTargetDependency;
 			name = "FDFoundationKit watchOS";
 			targetProxy = 27843DAB1BA3E5D900A0D473 /* PBXContainerItemProxy */;
+		};
+		27843DBB1BA3E6D100A0D473 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 27759C6919C69E98008D9F3E /* FDModel iOS */;
+			targetProxy = 27843DBA1BA3E6D100A0D473 /* PBXContainerItemProxy */;
+		};
+		27843DCA1BA3E6DA00A0D473 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 27759C6919C69E98008D9F3E /* FDModel iOS */;
+			targetProxy = 27843DC91BA3E6DA00A0D473 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -598,6 +748,56 @@
 			};
 			name = Release;
 		};
+		27843DBD1BA3E6D100A0D473 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "FDModel Tests/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.1414degrees.model.ios.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		27843DBE1BA3E6D100A0D473 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "FDModel Tests/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.1414degrees.model.ios.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		27843DCC1BA3E6DA00A0D473 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "FDModel Tests/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.1414degrees.model.osx.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		27843DCD1BA3E6DA00A0D473 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "FDModel Tests/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.1414degrees.model.osx.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 		27A24B4E19C3C47C00BA5D33 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -691,6 +891,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		27843DBC1BA3E6D100A0D473 /* Build configuration list for PBXNativeTarget "FDModel iOS Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27843DBD1BA3E6D100A0D473 /* Debug */,
+				27843DBE1BA3E6D100A0D473 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		27843DCB1BA3E6DA00A0D473 /* Build configuration list for PBXNativeTarget "FDModel OS X Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27843DCC1BA3E6DA00A0D473 /* Debug */,
+				27843DCD1BA3E6DA00A0D473 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		27A24B3A19C3C47C00BA5D33 /* Build configuration list for PBXProject "FDModel" */ = {
 			isa = XCConfigurationList;

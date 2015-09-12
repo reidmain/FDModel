@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "27843D971BA3E5C900A0D473"
-               BuildableName = "FDModel watchOS.framework"
+               BuildableName = "FDModel.framework"
                BlueprintName = "FDModel watchOS"
                ReferencedContainer = "container:FDModel.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "27843D971BA3E5C900A0D473"
-            BuildableName = "FDModel watchOS.framework"
+            BuildableName = "FDModel.framework"
             BlueprintName = "FDModel watchOS"
             ReferencedContainer = "container:FDModel.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "27843D971BA3E5C900A0D473"
-            BuildableName = "FDModel watchOS.framework"
+            BuildableName = "FDModel.framework"
             BlueprintName = "FDModel watchOS"
             ReferencedContainer = "container:FDModel.xcodeproj">
          </BuildableReference>

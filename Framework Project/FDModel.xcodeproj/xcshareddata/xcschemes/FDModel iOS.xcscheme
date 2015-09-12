@@ -29,7 +29,26 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       codeCoverageEnabled = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "27843DB31BA3E6D100A0D473"
+               BuildableName = "FDModel iOS Tests.xctest"
+               BlueprintName = "FDModel iOS Tests"
+               ReferencedContainer = "container:FDModel.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "27759C6919C69E98008D9F3E"
+            BuildableName = "FDModel.framework"
+            BlueprintName = "FDModel iOS"
+            ReferencedContainer = "container:FDModel.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
